@@ -3,21 +3,25 @@
   height 100%
   position relative
 
-  &::before 
-    clear both
-    content ""
-    display table
-    margin-top -1px
-    height 0
-
   .menu-wrapper
     display: flex
-    justify-content space-around
+    justify-content center
     top calc(50% - 100px)
     width: 100%
     position fixed
 
-  .menu-item
-    width 200px
-    height 200px
-    background blue
+    .menu-item
+      border 1px solid #ffffff
+      height 200px
+      margin 20px
+      width 200px
+
+.content-wrapper
+  background-color green
+  height 100%
+
+.footer-wrapper
+  background-color #f00
+  position fixed
+  bottom 0
+  width 100%
