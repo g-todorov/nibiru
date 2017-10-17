@@ -5,23 +5,32 @@
 
   .menu-wrapper
     display: flex
+    height 200px
     justify-content center
-    top calc(50% - 100px)
-    width: 100%
     position fixed
+    top calc(50% - 75px)
+    width: 100%
 
     .menu-item
       border 1px solid #ffffff
-      height 200px
+      height 150px
       margin 20px
-      width 200px
+      width 150px
 
 .content-wrapper
-  background-color green
-  height 100%
+  background-color #008000
+  // bottom 25px
+  // height 100%
+  position fixed
+  top calc(50% + 75px)
+  width 100%
 
 .footer-wrapper
+  align-content center
   background-color #f00
+  bottom -25px
+  display flex
+  height 25px
+  justify-content center
   position fixed
-  bottom 0
   width 100%

@@ -13,10 +13,6 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
       transition('* => menuActive', animate('200ms ease-in')),
     ]),
     trigger('firstMenuItemState', [
-      state('nonActiveMenuItem', style({
-        width: '200px',
-        height: '200px'
-      })),
       state('activeMenuItem', style({
         transform: 'rotate(45deg)',
         width: '150px',
@@ -39,7 +35,20 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
         height: '150px'
       })),
       transition ('nonActiveMenuItem <=> activeMenuItem', animate('200ms ease-in')),
-    ]) 
+    ]),
+    trigger('footerState', [
+      state('visible', style ({
+        bottom: '0'
+      })),
+      transition ('invisible => visible', animate('200ms ease-in')),
+    ]),
+    trigger('contentState', [
+      state('visible', style ({
+        bottom: '25px',
+        top: '250px'
+      })),
+      transition ('invisible => visible', animate('200ms ease-in')),
+    ])
   ]
 })
 export class AppComponent {
@@ -47,12 +56,16 @@ export class AppComponent {
   firstMenuItemState: string = 'nonActiveMenuItem'
   secondMenuItemState: string = 'nonActiveMenuItem'
   thirdMenuItemState: string = 'nonActiveMenuItem'
+  footerState: string = 'invisible'
+  contentState: string = 'invisible'
 
   onFirstMenuItemClicked() {
     this.firstMenuItemState = 'activeMenuItem'
     this.secondMenuItemState = 'nonActiveMenuItem'
     this.thirdMenuItemState = 'nonActiveMenuItem'
     this.menuState = 'menuActive'
+    this.footerState = 'visible'
+    this.contentState = 'visible'
   }
 
   onSecondMenuItemClicked() {
@@ -60,6 +73,8 @@ export class AppComponent {
     this.firstMenuItemState = 'nonActiveMenuItem'
     this.thirdMenuItemState = 'nonActiveMenuItem'
     this.menuState = 'menuActive'
+    this.footerState = 'visible'
+    this.contentState = 'visible'
   }
 
   onThirdMenuItemClicked() {
@@ -67,5 +82,7 @@ export class AppComponent {
     this.firstMenuItemState = 'nonActiveMenuItem'
     this.secondMenuItemState = 'nonActiveMenuItem'
     this.menuState = 'menuActive'
+    this.footerState = 'visible'
+    this.contentState = 'visible'
   }
 }
