@@ -10,6 +10,8 @@
     position fixed
     top calc(50% - 75px)
     width: 100%
+    border-top: 1px solid #ffffff
+    border-bottom: 1px solid #ffffff
 
     .menu-item
       border 1px solid #ffffff
@@ -18,16 +20,22 @@
       width 150px
 
 .content-wrapper
-  background-color #008000
+  // background-color #008000
   // bottom 25px
   // height 100%
+  // display none
+  height 0
   position fixed
   top calc(50% + 75px)
   width 100%
 
+  .content-item
+    display none
+
 .footer-wrapper
+  border-top: 1px solid #ffffff
   align-content center
-  background-color #f00
+  // background-color #f00
   bottom -25px
   display flex
   height 25px

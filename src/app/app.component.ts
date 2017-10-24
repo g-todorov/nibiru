@@ -8,7 +8,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   animations: [
     trigger('menuState', [
       state('menuActive', style({
-        top: '50px'
+        // top: '50px'
+        top: '0'
       })),
       transition('* => menuActive', animate('200ms ease-in')),
     ]),
@@ -44,8 +45,15 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     ]),
     trigger('contentState', [
       state('visible', style ({
+        height: 'auto',
         bottom: '25px',
         top: '250px'
+      })),
+      transition ('invisible => visible', animate('200ms ease-in')),
+    ]),
+    trigger('contentItemsState', [
+      state('visible', style ({
+        display: 'block'
       })),
       transition ('invisible => visible', animate('200ms ease-in')),
     ])
@@ -58,6 +66,26 @@ export class AppComponent {
   thirdMenuItemState: string = 'nonActiveMenuItem'
   footerState: string = 'invisible'
   contentState: string = 'invisible'
+  contentItemsState: string = 'invisible'
+  itemsList: {name, descrption, imgUrl}[] = [
+    {
+      name: 'name1',
+      descrption: '',
+      imgUrl: ''
+    }
+    ,
+    {
+      name: 'name2',
+      descrption: '',
+      imgUrl: ''
+    }
+    ,
+    {
+      name: 'name3',
+      descrption: '',
+      imgUrl: ''
+    }
+  ]
 
   onFirstMenuItemClicked() {
     this.firstMenuItemState = 'activeMenuItem'
@@ -66,6 +94,7 @@ export class AppComponent {
     this.menuState = 'menuActive'
     this.footerState = 'visible'
     this.contentState = 'visible'
+    this.contentItemsState = 'visible'
   }
 
   onSecondMenuItemClicked() {
@@ -75,6 +104,7 @@ export class AppComponent {
     this.menuState = 'menuActive'
     this.footerState = 'visible'
     this.contentState = 'visible'
+    this.contentItemsState = 'visible'
   }
 
   onThirdMenuItemClicked() {
@@ -84,5 +114,6 @@ export class AppComponent {
     this.menuState = 'menuActive'
     this.footerState = 'visible'
     this.contentState = 'visible'
+    this.contentItemsState = 'visible'
   }
 }

@@ -1,16 +1,20 @@
 <div class="main-wrapper">
   <div [@menuState]="menuState" class="menu-wrapper">
     <div>
-      <div [@firstMenuItemState]='firstMenuItemState' (click)="onFirstMenuItemClicked()" class="menu-item one"></div>
+      <div routerLink="/first" [@firstMenuItemState]='firstMenuItemState' (click)="onFirstMenuItemClicked()" class="menu-item one"></div>
     </div>
     <div>
-      <div [@secondMenuItemState]='secondMenuItemState' (click)="onSecondMenuItemClicked()" class="menu-item two"></div>
+      <div routerLink="/second" [@secondMenuItemState]='secondMenuItemState' (click)="onSecondMenuItemClicked()" class="menu-item two"></div>
     </div>
     <div>
-      <div [@thirdMenuItemState]='thirdMenuItemState' (click)="onThirdMenuItemClicked()" class="menu-item three "></div>
+      <div routerLink="/third" [@thirdMenuItemState]='thirdMenuItemState' (click)="onThirdMenuItemClicked()" class="menu-item three "></div>
     </div>
   </div>
   <div [@contentState]='contentState' class="content-wrapper">
+    <!-- <div [@contentItemsState]='contentItemsState' class="content-item" *ngFor="let item of itemsList">
+      <span class="item-name">{{item.name}}</span>
+    </div> -->
+    <router-outlet></router-outlet>
   </div>
   <div [@footerState]='footerState' class="footer-wrapper">
     copyrights
