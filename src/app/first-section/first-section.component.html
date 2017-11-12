@@ -1,3 +1,6 @@
 <p>
   first-section works!
+  <li *ngFor="let item of firstSectionItems">
+    <a href="" [routerLink]="['/item-details', item.name]">{{item.name}}</a>
+  </li>
 </p>

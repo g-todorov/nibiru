@@ -7,11 +7,15 @@ import { AppComponent } from './app.component';
 import { FirstSectionComponent } from './first-section/first-section.component';
 import { SecondSectionComponent } from './second-section/second-section.component';
 import { ThirdSectionComponent } from './third-section/third-section.component';
+import { ItemDetailsComponent } from './item-details/item-details.component';
+
+import { ItemsService } from './items.service';
 
 const appRoutes: Routes = [
   { path: 'first', component: FirstSectionComponent },
   { path: 'second', component: SecondSectionComponent },
-  { path: 'third', component: ThirdSectionComponent }
+  { path: 'third', component: ThirdSectionComponent },
+  { path: 'item-details/:name', component: ItemDetailsComponent }
 ];
 
 
@@ -20,7 +24,8 @@ const appRoutes: Routes = [
     AppComponent,
     FirstSectionComponent,
     SecondSectionComponent,
-    ThirdSectionComponent
+    ThirdSectionComponent,
+    ItemDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [],
+  providers: [ItemsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

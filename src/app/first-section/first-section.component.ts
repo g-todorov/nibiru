@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ItemsService } from '../items.service';
 
 @Component({
   selector: 'app-first-section',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./first-section.component.styl']
 })
 export class FirstSectionComponent implements OnInit {
+  firstSectionItems: [any];
 
-  constructor() { }
+  constructor(private itemsService: ItemsService) { }
 
   ngOnInit() {
+    this.firstSectionItems = this.itemsService.getItems()
   }
 
 }
