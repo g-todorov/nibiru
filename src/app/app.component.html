@@ -1,5 +1,5 @@
 <div class="main-wrapper">
-  <div [@menuState]="menuState" class="menu-wrapper">
+  <div [@mainMenuAnimation]="mainMenuAnimation" class="menu-wrapper">
     <div>
       <div routerLink="/first" [@firstMenuItemState]='firstMenuItemState' (click)="onFirstMenuItemClicked()" class="menu-item one"></div>
     </div>
@@ -10,13 +10,13 @@
       <div routerLink="/third" [@thirdMenuItemState]='thirdMenuItemState' (click)="onThirdMenuItemClicked()" class="menu-item three "></div>
     </div>
   </div>
-  <div [@contentState]='contentState' class="content-wrapper">
+  <div [@mainContentAnimation]='mainContentAnimation' class="content-wrapper">
     <!-- <div [@contentItemsState]='contentItemsState' class="content-item" *ngFor="let item of itemsList">
       <span class="item-name">{{item.name}}</span>
     </div> -->
     <router-outlet></router-outlet>
   </div>
-  <div [@footerState]='footerState' class="footer-wrapper">
+  <div [@footerAnimation]='footerAnimation' class="footer-wrapper">
     copyrights
   </div>
 </div>

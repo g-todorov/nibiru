@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
+import {mainMenuAnimation} from './animations/main-menu.animation'
+import {footerAnimation} from './animations/footer.animation'
+import {mainContentAnimation} from './animations/main-content.animation'
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.styl'],
   animations: [
-    trigger('menuState', [
-      state('menuActive', style({
-        // top: '50px'
-        top: '0'
-      })),
-      transition('* => menuActive', animate('200ms ease-in')),
-    ]),
+    mainMenuAnimation,
+    footerAnimation,
+    mainContentAnimation,
     trigger('firstMenuItemState', [
       state('activeMenuItem', style({
         transform: 'rotate(45deg)',
@@ -37,12 +37,6 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
       })),
       transition ('nonActiveMenuItem <=> activeMenuItem', animate('200ms ease-in')),
     ]),
-    trigger('footerState', [
-      state('visible', style ({
-        bottom: '0'
-      })),
-      transition ('invisible => visible', animate('200ms ease-in')),
-    ]),
     trigger('contentState', [
       state('visible', style ({
         height: 'auto',
@@ -60,40 +54,21 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   ]
 })
 export class AppComponent {
-  menuState: string = 'inactive'
+  mainMenuAnimation: string = 'inactive'
   firstMenuItemState: string = 'nonActiveMenuItem'
   secondMenuItemState: string = 'nonActiveMenuItem'
   thirdMenuItemState: string = 'nonActiveMenuItem'
   footerState: string = 'invisible'
-  contentState: string = 'invisible'
+  mainContentAnimation: string = 'invisible'
   contentItemsState: string = 'invisible'
-  itemsList: {name, descrption, imgUrl}[] = [
-    {
-      name: 'name1',
-      descrption: '',
-      imgUrl: ''
-    }
-    ,
-    {
-      name: 'name2',
-      descrption: '',
-      imgUrl: ''
-    }
-    ,
-    {
-      name: 'name3',
-      descrption: '',
-      imgUrl: ''
-    }
-  ]
 
   onFirstMenuItemClicked() {
     this.firstMenuItemState = 'activeMenuItem'
     this.secondMenuItemState = 'nonActiveMenuItem'
     this.thirdMenuItemState = 'nonActiveMenuItem'
-    this.menuState = 'menuActive'
+    this.mainMenuAnimation = 'menuActive'
     this.footerState = 'visible'
-    this.contentState = 'visible'
+    this.mainContentAnimation = 'visible'
     this.contentItemsState = 'visible'
   }
 
@@ -101,9 +76,9 @@ export class AppComponent {
     this.secondMenuItemState = 'activeMenuItem'
     this.firstMenuItemState = 'nonActiveMenuItem'
     this.thirdMenuItemState = 'nonActiveMenuItem'
-    this.menuState = 'menuActive'
+    this.mainMenuAnimation = 'menuActive'
     this.footerState = 'visible'
-    this.contentState = 'visible'
+    this.mainContentAnimation = 'visible'
     this.contentItemsState = 'visible'
   }
 
@@ -111,9 +86,9 @@ export class AppComponent {
     this.thirdMenuItemState = 'activeMenuItem'
     this.firstMenuItemState = 'nonActiveMenuItem'
     this.secondMenuItemState = 'nonActiveMenuItem'
-    this.menuState = 'menuActive'
+    this.mainMenuAnimation = 'menuActive'
     this.footerState = 'visible'
-    this.contentState = 'visible'
+    this.mainContentAnimation = 'visible'
     this.contentItemsState = 'visible'
   }
 }
