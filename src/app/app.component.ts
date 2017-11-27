@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { Router, ActivatedRoute, RoutesRecognized } from '@angular/router';
 
 import {mainMenuAnimation} from './animations/main-menu.animation'
 import {footerAnimation} from './animations/footer.animation'
@@ -53,7 +54,7 @@ import {mainContentAnimation} from './animations/main-content.animation'
     ])
   ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   mainMenuAnimation: string = 'inactive'
   firstMenuItemState: string = 'nonActiveMenuItem'
   secondMenuItemState: string = 'nonActiveMenuItem'
@@ -61,6 +62,30 @@ export class AppComponent {
   footerState: string = 'invisible'
   mainContentAnimation: string = 'invisible'
   contentItemsState: string = 'invisible'
+
+  constructor(private route: ActivatedRoute, private router: Router) {}
+
+  ngOnInit() {
+    this.router.events.forEach((event) => {
+      if (event instanceof RoutesRecognized) {
+        if (event.state.url === '/first') {
+          this.firstMenuItemState = 'activeMenuItem'
+          this. mainMenuAnimation = 'menuActive'
+        }
+        else if (event.state.url === '/second') {
+          this.secondMenuItemState = 'activeMenuItem'
+          this. mainMenuAnimation = 'menuActive'
+        }
+        else if  (event.state.url === '/third') {
+          this.thirdMenuItemState = 'activeMenuItem'
+          this. mainMenuAnimation = 'menuActive'
+        }
+      }
+    });
+    // const routerSubscription = this.route.url.subscribe(params => {
+    //   debugger
+    // });
+  }
 
   onFirstMenuItemClicked() {
     this.firstMenuItemState = 'activeMenuItem'

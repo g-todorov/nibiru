@@ -1,4 +1,4 @@
-import { NgModule }             from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { FirstSectionComponent } from './first-section/first-section.component';

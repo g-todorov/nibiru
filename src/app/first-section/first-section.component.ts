@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemsService } from '../items.service';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-first-section',
@@ -9,10 +11,14 @@ import { ItemsService } from '../items.service';
 export class FirstSectionComponent implements OnInit {
   firstSectionItems: [any];
 
-  constructor(private itemsService: ItemsService) { }
+  constructor(private itemsService: ItemsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.firstSectionItems = this.itemsService.getItems()
+    const routerSubscription = this.route.params.subscribe(params => {
+      debugger
+      this.firstSectionItems = this.itemsService.getItems(params.path);
+    });
+    
   }
 
 }

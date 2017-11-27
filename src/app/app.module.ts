@@ -11,6 +11,8 @@ import { ThirdSectionComponent } from './third-section/third-section.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
 
 import { ItemsService } from './items.service';
+import { SectionServiceComponent } from './section-service/section-service.component';
+import { SectionComponent } from './section/section.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { ItemsService } from './items.service';
     FirstSectionComponent,
     SecondSectionComponent,
     ThirdSectionComponent,
-    ItemDetailsComponent
+    ItemDetailsComponent,
+    SectionServiceComponent,
+    SectionComponent
   ],
   imports: [
     BrowserModule,
