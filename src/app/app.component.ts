@@ -59,7 +59,7 @@ export class AppComponent implements OnInit {
   firstMenuItemState: string = 'nonActiveMenuItem'
   secondMenuItemState: string = 'nonActiveMenuItem'
   thirdMenuItemState: string = 'nonActiveMenuItem'
-  footerState: string = 'invisible'
+  footerAnimation: string = 'invisible'
   mainContentAnimation: string = 'invisible'
   contentItemsState: string = 'invisible'
 
@@ -70,21 +70,21 @@ export class AppComponent implements OnInit {
       if (event instanceof RoutesRecognized) {
         if (event.state.url === '/first') {
           this.firstMenuItemState = 'activeMenuItem'
-          this. mainMenuAnimation = 'menuActive'
         }
         else if (event.state.url === '/second') {
           this.secondMenuItemState = 'activeMenuItem'
-          this. mainMenuAnimation = 'menuActive'
         }
-        else if  (event.state.url === '/third') {
+        else if (event.state.url === '/third') {
           this.thirdMenuItemState = 'activeMenuItem'
-          this. mainMenuAnimation = 'menuActive'
+        }
+
+        if (event.state.url !== '/') {
+          this.mainMenuAnimation = 'menuActive'
+          this.mainContentAnimation = 'visible'
+          this.footerAnimation = 'visible'
         }
       }
     });
-    // const routerSubscription = this.route.url.subscribe(params => {
-    //   debugger
-    // });
   }
 
   onFirstMenuItemClicked() {
@@ -92,7 +92,7 @@ export class AppComponent implements OnInit {
     this.secondMenuItemState = 'nonActiveMenuItem'
     this.thirdMenuItemState = 'nonActiveMenuItem'
     this.mainMenuAnimation = 'menuActive'
-    this.footerState = 'visible'
+    this.footerAnimation = 'visible'
     this.mainContentAnimation = 'visible'
     this.contentItemsState = 'visible'
   }
@@ -102,7 +102,7 @@ export class AppComponent implements OnInit {
     this.firstMenuItemState = 'nonActiveMenuItem'
     this.thirdMenuItemState = 'nonActiveMenuItem'
     this.mainMenuAnimation = 'menuActive'
-    this.footerState = 'visible'
+    this.footerAnimation = 'visible'
     this.mainContentAnimation = 'visible'
     this.contentItemsState = 'visible'
   }
@@ -112,7 +112,7 @@ export class AppComponent implements OnInit {
     this.firstMenuItemState = 'nonActiveMenuItem'
     this.secondMenuItemState = 'nonActiveMenuItem'
     this.mainMenuAnimation = 'menuActive'
-    this.footerState = 'visible'
+    this.footerAnimation = 'visible'
     this.mainContentAnimation = 'visible'
     this.contentItemsState = 'visible'
   }

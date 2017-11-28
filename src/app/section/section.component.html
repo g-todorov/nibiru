@@ -1,3 +1,6 @@
 <p>
   section works!
+  <li *ngFor="let item of items">
+    <a href="" [routerLink]="['/item-details', item.name]">{{item.name}}</a>
+  </li>
 </p>

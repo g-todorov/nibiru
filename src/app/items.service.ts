@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ItemsService {
-  itemsFirst: [any] = [ 
+  itemsFirst: [any] = [
     {
       name: 'test',
       description: 'test'
@@ -21,41 +21,41 @@ export class ItemsService {
     }
   ]
 
-  itemsSecond: [any] = [ 
+  itemsSecond: [any] = [
     {
-      name: 'test',
-      description: 'test'
+      name: 'test4',
+      description: 'test4'
     },
     {
-      name: 'test1',
-      description: 'test1'
+      name: 'test5',
+      description: 'test5'
     },
     {
-      name: 'test2',
-      description: 'test2'
+      name: 'test5',
+      description: 'test5'
     },
     {
-      name: 'test3',
-      description: 'test3'
+      name: 'test7',
+      description: 'test5'
     }
   ]
 
-  itemsThird: [any] = [ 
+  itemsThird: [any] = [
     {
-      name: 'test',
-      description: 'test'
+      name: 'test8',
+      description: 'test8'
     },
     {
-      name: 'test1',
-      description: 'test1'
+      name: 'test9',
+      description: 'test9'
     },
     {
-      name: 'test2',
-      description: 'test2'
+      name: 'test10',
+      description: 'test10'
     },
     {
-      name: 'test3',
-      description: 'test3'
+      name: 'test11',
+      description: 'test11'
     }
   ]
 
@@ -67,15 +67,16 @@ export class ItemsService {
       return this.itemsFirst
     }
     else if (type === "second") {
-      return this.itemsFirst
+      return this.itemsSecond
     }
     else if (type === "third") {
-      return this.itemsFirst
+      return this.itemsThird
     }
   }
 
   getItem(name: string): any {
-    return this.itemsFirst.find(item =>
+    let allItems = this.itemsFirst.concat(this.itemsSecond, this.itemsThird)
+    return allItems.find(item =>
       item.name === name
     )
   }
