@@ -1,5 +1,5 @@
 <div class="main-wrapper">
-  <div [@mainMenuAnimation]="mainMenuAnimation" class="menu-wrapper">
+  <div [@mainMenuState]="mainMenuState" class="menu-wrapper">
     <div>
       <div routerLink="/first" [@firstMenuItemState]='firstMenuItemState' (click)="onFirstMenuItemClicked()" class="menu-item one"></div>
     </div>
@@ -9,11 +9,13 @@
     <div>
       <div routerLink="/third" [@thirdMenuItemState]='thirdMenuItemState' (click)="onThirdMenuItemClicked()" class="menu-item three "></div>
     </div>
+    <div [@bottomBorderState]='bottomBorderState' class="menu-bottom-border">
+    </div>
   </div>
-  <div [@mainContentAnimation]='mainContentAnimation' class="content-wrapper">
+  <div [@mainContentState]='mainContentState' class="content-wrapper">
     <router-outlet></router-outlet>
   </div>
-  <div [@footerAnimation]='footerAnimation' class="footer-wrapper">
+  <div [@footerState]='footerState' class="footer-wrapper">
     copyrights
   </div>
 </div>

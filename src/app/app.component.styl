@@ -1,17 +1,32 @@
+* 
+  box-sizing border-box
+
 .main-wrapper
   background grey
   height 100%
   position relative
 
   .menu-wrapper
+    border-bottom: 1px solid #ffffff
+    border-top: 1px solid #ffffff
     display: flex
     height 200px
     justify-content center
     position fixed
     top calc(50% - 75px)
     width: 100%
-    border-top: 1px solid #ffffff
-    border-bottom: 1px solid #ffffff
+    z-index 1
+
+    .menu-bottom-border
+      content ''
+      display block
+      width 10%
+      height 100px
+      background black
+      position absolute
+      left 0
+      bottom -5px
+      height 5px
 
     .menu-item
       border 1px solid #ffffff
@@ -20,11 +35,10 @@
       width 150px
 
 .content-wrapper
-  // background-color #008000
-  // bottom 25px
-  // height 100%
-  // display none
+  background: white
+  display: flex
   height 0
+  justify-content: center
   position fixed
   top calc(50% + 75px)
   width 100%
@@ -35,7 +49,6 @@
 .footer-wrapper
   border-top: 1px solid #ffffff
   align-content center
-  // background-color #f00
   bottom -25px
   display flex
   height 25px

@@ -2,66 +2,52 @@ import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Router, ActivatedRoute, RoutesRecognized } from '@angular/router';
 
-import {mainMenuAnimation} from './animations/main-menu.animation'
-import {footerAnimation} from './animations/footer.animation'
-import {mainContentAnimation} from './animations/main-content.animation'
+import {mainMenuState} from './animations/main-menu.state'
+import {footerState} from './animations/footer.state'
+import {mainContentState} from './animations/main-content.state'
+import {bottomBorderState} from './animations/bottom-border.state'
+import {firstMenuItemState} from './animations/first-menu-item.state'
+import {secondMenuItemState} from './animations/second-menu-item.state'
+import {thirdMenuItemState} from './animations/third-menu-item-state'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.styl'],
   animations: [
-    mainMenuAnimation,
-    footerAnimation,
-    mainContentAnimation,
-    trigger('firstMenuItemState', [
-      state('activeMenuItem', style({
-        transform: 'rotate(45deg)',
-        width: '150px',
-        height: '150px'
-      })),
-      transition ('nonActiveMenuItem <=> activeMenuItem', animate('200ms ease-in')),
-    ]),
-    trigger('secondMenuItemState', [
-      state('activeMenuItem', style({
-        transform: 'rotate(45deg)',
-        width: '150px',
-        height: '150px'
-      })),
-      transition ('nonActiveMenuItem <=> activeMenuItem', animate('200ms ease-in')),
-    ]),
-    trigger('thirdMenuItemState', [
-      state('activeMenuItem', style({
-        transform: 'rotate(45deg)',
-        width: '150px',
-        height: '150px'
-      })),
-      transition ('nonActiveMenuItem <=> activeMenuItem', animate('200ms ease-in')),
-    ]),
-    trigger('contentState', [
-      state('visible', style ({
-        height: 'auto',
-        bottom: '25px',
-        top: '250px'
-      })),
-      transition ('invisible => visible', animate('200ms ease-in')),
-    ]),
-    trigger('contentItemsState', [
-      state('visible', style ({
-        display: 'block'
-      })),
-      transition ('invisible => visible', animate('200ms ease-in')),
-    ])
+    bottomBorderState,
+    footerState,
+    mainContentState,
+    mainMenuState,
+    firstMenuItemState,
+    secondMenuItemState,
+    thirdMenuItemState
+    // ,
+    // trigger('contentState', [
+    //   state('visible', style ({
+    //     height: 'auto',
+    //     bottom: '25px',
+    //     top: '250px'
+    //   })),
+    //   transition ('invisible <=> visible', animate('300ms ease-in')),
+    // ]),
+    // trigger('contentItemsState', [
+    //   state('visible', style ({
+    //     display: 'block'
+    //   })),
+    //   transition ('invisible <=> visible', animate('300ms ease-in')),
+    // ])
   ]
 })
 export class AppComponent implements OnInit {
-  mainMenuAnimation: string = 'inactive'
-  firstMenuItemState: string = 'nonActiveMenuItem'
-  secondMenuItemState: string = 'nonActiveMenuItem'
-  thirdMenuItemState: string = 'nonActiveMenuItem'
-  footerAnimation: string = 'invisible'
-  mainContentAnimation: string = 'invisible'
+  mainMenuState: string = 'inactive'
+  firstMenuItemState: string = 'unselected'
+  secondMenuItemState: string = 'unselected'
+  thirdMenuItemState: string = 'unselected'
+  footerState: string = 'invisible'
+  mainContentState: string = 'invisible'
   contentItemsState: string = 'invisible'
+  bottomBorderState: string = 'noWidth'
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
@@ -69,51 +55,64 @@ export class AppComponent implements OnInit {
     this.router.events.forEach((event) => {
       if (event instanceof RoutesRecognized) {
         if (event.state.url === '/first') {
-          this.firstMenuItemState = 'activeMenuItem'
+          this.onFirstMenuItemClicked();
         }
         else if (event.state.url === '/second') {
-          this.secondMenuItemState = 'activeMenuItem'
+          this.onSecondMenuItemClicked();
         }
         else if (event.state.url === '/third') {
-          this.thirdMenuItemState = 'activeMenuItem'
+          this.onThirdMenuItemClicked();
+        }
+
+        if (event.state.url === '/') {
+          this.bottomBorderState = 'noWidth'
+          this.mainMenuState = 'inactive'
+          this.mainContentState = 'invisible'
+          this.footerState = 'invisible'
         }
 
         if (event.state.url !== '/') {
-          this.mainMenuAnimation = 'menuActive'
-          this.mainContentAnimation = 'visible'
-          this.footerAnimation = 'visible'
+          this.mainMenuState = 'active'
+          this.mainContentState = 'visible'
+          this.footerState = 'visible'
         }
       }
     });
   }
 
   onFirstMenuItemClicked() {
-    this.firstMenuItemState = 'activeMenuItem'
-    this.secondMenuItemState = 'nonActiveMenuItem'
-    this.thirdMenuItemState = 'nonActiveMenuItem'
-    this.mainMenuAnimation = 'menuActive'
-    this.footerAnimation = 'visible'
-    this.mainContentAnimation = 'visible'
+    this.firstMenuItemState = 'selected'
+    this.secondMenuItemState = 'unselected'
+    this.thirdMenuItemState = 'unselected'
+
+    this.mainMenuState = 'active'
+    this.footerState = 'visible'
+    this.mainContentState = 'visible'
     this.contentItemsState = 'visible'
+    this.bottomBorderState = 'fullWidth'
   }
 
   onSecondMenuItemClicked() {
-    this.secondMenuItemState = 'activeMenuItem'
-    this.firstMenuItemState = 'nonActiveMenuItem'
-    this.thirdMenuItemState = 'nonActiveMenuItem'
-    this.mainMenuAnimation = 'menuActive'
-    this.footerAnimation = 'visible'
-    this.mainContentAnimation = 'visible'
+    this.secondMenuItemState = 'selected'
+    this.firstMenuItemState = 'unselected'
+    this.thirdMenuItemState = 'unselected'
+
+    this.mainMenuState = 'active'
+    this.footerState = 'visible'
+    this.mainContentState = 'visible'
     this.contentItemsState = 'visible'
+    this.bottomBorderState = 'fullWidth'
   }
 
   onThirdMenuItemClicked() {
-    this.thirdMenuItemState = 'activeMenuItem'
-    this.firstMenuItemState = 'nonActiveMenuItem'
-    this.secondMenuItemState = 'nonActiveMenuItem'
-    this.mainMenuAnimation = 'menuActive'
-    this.footerAnimation = 'visible'
-    this.mainContentAnimation = 'visible'
+    this.thirdMenuItemState = 'selected'
+    this.firstMenuItemState = 'unselected'
+    this.secondMenuItemState = 'unselected'
+
+    this.mainMenuState = 'active'
+    this.footerState = 'visible'
+    this.mainContentState = 'visible'
     this.contentItemsState = 'visible'
+    this.bottomBorderState = 'fullWidth'
   }
 }
