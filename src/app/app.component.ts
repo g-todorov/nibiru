@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+// import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Router, ActivatedRoute, RoutesRecognized } from '@angular/router';
 
 import {mainMenuState} from './animations/main-menu.state'
@@ -65,6 +65,9 @@ export class AppComponent implements OnInit {
         }
 
         if (event.state.url === '/') {
+          this.firstMenuItemState = 'unselected'
+          this.secondMenuItemState = 'unselected'
+          this.thirdMenuItemState = 'unselected'
           this.bottomBorderState = 'noWidth'
           this.mainMenuState = 'inactive'
           this.mainContentState = 'invisible'
