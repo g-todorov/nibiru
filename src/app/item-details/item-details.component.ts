@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ItemsService } from '../items.service';
+import { Location } from '@angular/common';
 
-import {itemState} from '../animations/item.state'
+import { ItemsService } from '../items.service';
+import { itemState } from '../animations/item.state'
 
 @Component({
   selector: 'app-item-details',
@@ -15,12 +16,17 @@ export class ItemDetailsComponent implements OnInit {
   item: {};
   itemState: string = 'opened'
 
-  constructor(private route: ActivatedRoute, private itemsService: ItemsService) { }
+  constructor(private route: ActivatedRoute, private itemsService: ItemsService, private location: Location) { }
 
   ngOnInit() {
-    // const routerSubscription = this.route.params.subscribe(params => {
-    //   this.item = this.itemsService.getItem(params.name)
-    // });
+    const routerSubscription = this.route.params.subscribe(params => {
+      this.item = this.itemsService.getItem(params.name)
+    });
+  }
+
+  goBack() {
+    // this.itemState = 'closed'
+    this.location.back();
   }
 
 }

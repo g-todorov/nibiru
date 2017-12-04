@@ -1,6 +1,9 @@
 <div [@itemState]='itemState' class="item-details">
-  <div class="description">  
+  <div class="description">
     item-details works!
-    <!-- {{item.name}} -->
+    {{item.name}}
   </div>
+  <span class="close-button" (click)="goBack()">
+    x
+  </span>
 </div>
