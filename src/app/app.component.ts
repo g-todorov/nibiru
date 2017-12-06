@@ -2,13 +2,15 @@ import { Component, OnInit } from '@angular/core';
 // import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Router, ActivatedRoute, RoutesRecognized } from '@angular/router';
 
-import {mainMenuState} from './animations/main-menu.state'
-import {footerState} from './animations/footer.state'
-import {mainContentState} from './animations/main-content.state'
-import {bottomBorderState} from './animations/bottom-border.state'
-import {firstMenuItemState} from './animations/first-menu-item.state'
-import {secondMenuItemState} from './animations/second-menu-item.state'
-import {thirdMenuItemState} from './animations/third-menu-item-state'
+import { mainMenuState } from './animations/main-menu.state'
+import { footerState } from './animations/footer.state'
+import { mainContentState } from './animations/main-content.state'
+import { bottomBorderState } from './animations/bottom-border.state'
+import { firstMenuItemState } from './animations/first-menu-item.state'
+import { secondMenuItemState } from './animations/second-menu-item.state'
+import { thirdMenuItemState } from './animations/third-menu-item-state'
+import { routerTransition } from './animations/router-transition.state'
+
 
 @Component({
   selector: 'app-root',
@@ -21,22 +23,8 @@ import {thirdMenuItemState} from './animations/third-menu-item-state'
     mainMenuState,
     firstMenuItemState,
     secondMenuItemState,
-    thirdMenuItemState
-    // ,
-    // trigger('contentState', [
-    //   state('visible', style ({
-    //     height: 'auto',
-    //     bottom: '25px',
-    //     top: '250px'
-    //   })),
-    //   transition ('invisible <=> visible', animate('300ms ease-in')),
-    // ]),
-    // trigger('contentItemsState', [
-    //   state('visible', style ({
-    //     display: 'block'
-    //   })),
-    //   transition ('invisible <=> visible', animate('300ms ease-in')),
-    // ])
+    thirdMenuItemState,
+    routerTransition
   ]
 })
 export class AppComponent implements OnInit {
@@ -46,7 +34,6 @@ export class AppComponent implements OnInit {
   thirdMenuItemState: string = 'unselected'
   footerState: string = 'invisible'
   mainContentState: string = 'invisible'
-  contentItemsState: string = 'invisible'
   bottomBorderState: string = 'noWidth'
 
   constructor(private route: ActivatedRoute, private router: Router) {}
@@ -91,7 +78,6 @@ export class AppComponent implements OnInit {
     this.mainMenuState = 'active'
     this.footerState = 'visible'
     this.mainContentState = 'visible'
-    this.contentItemsState = 'visible'
     this.bottomBorderState = 'fullWidth'
   }
 
@@ -103,7 +89,6 @@ export class AppComponent implements OnInit {
     this.mainMenuState = 'active'
     this.footerState = 'visible'
     this.mainContentState = 'visible'
-    this.contentItemsState = 'visible'
     this.bottomBorderState = 'fullWidth'
   }
 
@@ -115,7 +100,10 @@ export class AppComponent implements OnInit {
     this.mainMenuState = 'active'
     this.footerState = 'visible'
     this.mainContentState = 'visible'
-    this.contentItemsState = 'visible'
     this.bottomBorderState = 'fullWidth'
+  }
+
+  getState(outlet) {
+    return outlet.activatedRouteData.state;
   }
 }

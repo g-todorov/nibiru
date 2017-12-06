@@ -13,7 +13,9 @@
     </div>
   </div>
   <div [@mainContentState]='mainContentState' class="content-wrapper">
-    <router-outlet></router-outlet>
+    <div class="router-wrapper" [@routerTransition]="getState(o)">
+      <router-outlet #o="outlet"></router-outlet>
+    </div>
   </div>
   <div [@footerState]='footerState' class="footer-wrapper">
     copyrights

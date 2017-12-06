@@ -7,8 +7,8 @@ import { SectionComponent } from './section/section.component';
 import { ItemsService } from './items.service';
 
 const appRoutes: Routes = [
-  { path: ':section', component: SectionComponent },
-  { path: 'item-details/:name', component: ItemDetailsComponent }
+  { path: ':section', component: SectionComponent, data: { state: 'section' }},
+  { path: 'item-details/:name', component: ItemDetailsComponent, data: { state: 'details' } }
 ];
 
 @NgModule({
