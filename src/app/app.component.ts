@@ -75,10 +75,7 @@ export class AppComponent implements OnInit {
     this.secondMenuItemState = 'unselected'
     this.thirdMenuItemState = 'unselected'
 
-    this.mainMenuState = 'active'
-    this.footerState = 'visible'
-    this.mainContentState = 'visible'
-    this.bottomBorderState = 'fullWidth'
+    this.activateLandingPage()
   }
 
   onSecondMenuItemClicked() {
@@ -86,10 +83,7 @@ export class AppComponent implements OnInit {
     this.firstMenuItemState = 'unselected'
     this.thirdMenuItemState = 'unselected'
 
-    this.mainMenuState = 'active'
-    this.footerState = 'visible'
-    this.mainContentState = 'visible'
-    this.bottomBorderState = 'fullWidth'
+    this.activateLandingPage()
   }
 
   onThirdMenuItemClicked() {
@@ -97,6 +91,10 @@ export class AppComponent implements OnInit {
     this.firstMenuItemState = 'unselected'
     this.secondMenuItemState = 'unselected'
 
+    this.activateLandingPage()
+  }
+
+  activateLandingPage() {
     this.mainMenuState = 'active'
     this.footerState = 'visible'
     this.mainContentState = 'visible'
@@ -104,6 +102,7 @@ export class AppComponent implements OnInit {
   }
 
   getState(outlet) {
+    console.log(outlet.activatedRouteData.state);
     return outlet.activatedRouteData.state;
   }
 }

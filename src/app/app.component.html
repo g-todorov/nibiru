@@ -1,13 +1,13 @@
 <div class="main-wrapper">
   <div [@mainMenuState]="mainMenuState" class="menu-wrapper">
     <div>
-      <div routerLink="/first" [@firstMenuItemState]='firstMenuItemState' (click)="onFirstMenuItemClicked()" class="menu-item one"></div>
+      <div routerLink="/first" [@firstMenuItemState]='firstMenuItemState' routerLinkActive="active"(click)="onFirstMenuItemClicked()" class="menu-item one"></div>
     </div>
     <div>
-      <div routerLink="/second" [@secondMenuItemState]='secondMenuItemState' (click)="onSecondMenuItemClicked()" class="menu-item two"></div>
+      <div routerLink="/second" [@secondMenuItemState]='secondMenuItemState' routerLinkActive="active" (click)="onSecondMenuItemClicked()" class="menu-item two"></div>
     </div>
     <div>
-      <div routerLink="/third" [@thirdMenuItemState]='thirdMenuItemState' (click)="onThirdMenuItemClicked()" class="menu-item three "></div>
+      <div routerLink="/third" [@thirdMenuItemState]='thirdMenuItemState' routerLinkActive="active" (click)="onThirdMenuItemClicked()" class="menu-item three "></div>
     </div>
     <div [@bottomBorderState]='bottomBorderState' class="menu-bottom-border">
     </div>

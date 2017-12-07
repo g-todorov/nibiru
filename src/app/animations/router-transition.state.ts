@@ -14,17 +14,17 @@ export const routerTransition =
         animate('300ms ease-in-out', style({ opacity: '1', transform: 'translateY(0)' }))
       ], { optional: true })
     ]),
-    transition ('* => details', [
+    transition ('* <=> details', [
       query(':enter .item-details', [
         style({
           opacity: 0
         }),
-        animate('300ms ease-in-out', style({ opacity: '1' }))
+        animate('300ms ease-in-out',
+          style({ opacity: '1' }))
+      ], { optional: true }),
+      query(':leave .item-details', [
+        animate('300ms ease-in-out',
+          style({ opacity: '0' }))
       ], { optional: true })
     ]),
-    transition ('details => *', [
-      query(':leave .item-details', [
-        animate('300ms ease-in-out', style({ opacity: '0' }))
-      ], { optional: true })
-    ])
   ])
