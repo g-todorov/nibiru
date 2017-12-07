@@ -3,6 +3,7 @@ import { trigger, state, animate, transition, style, query } from '@angular/anim
 export const mainMenuState =
   trigger('mainMenuState', [
     state('active', style({
+      height: '100px',
       top: '0'
     })),
     transition('inactive <=> active', [

@@ -5,7 +5,7 @@ export const mainContentState =
     state('visible', style ({
       height: 'auto',
       bottom: '25px',
-      top: '200px'
+      top: '100px'
     })),
     transition ('invisible <=> visible', animate('300ms ease-in')),
   ])

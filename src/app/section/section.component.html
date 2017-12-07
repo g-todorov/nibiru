@@ -1,6 +1,5 @@
 <div class="items-section">
-  section works!
-  <li *ngFor="let item of items">
+  <div class="item-wrapper" *ngFor="let item of items">
     <a href="" [routerLink]="['/item-details', item.name]">{{item.name}}</a>
-  </li>
+  </div>
 </div>

@@ -29,12 +29,14 @@ import { routerTransition } from './animations/router-transition.state'
 })
 export class AppComponent implements OnInit {
   mainMenuState: string = 'inactive'
-  firstMenuItemState: string = 'unselected'
-  secondMenuItemState: string = 'unselected'
-  thirdMenuItemState: string = 'unselected'
+  firstMenuItemState: string
+  secondMenuItemState: string
+  thirdMenuItemState: string
   footerState: string = 'invisible'
   mainContentState: string = 'invisible'
   bottomBorderState: string = 'noWidth'
+
+  currentYear: number = (new Date()).getFullYear();
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
@@ -52,9 +54,9 @@ export class AppComponent implements OnInit {
         }
 
         if (event.state.url === '/') {
-          this.firstMenuItemState = 'unselected'
-          this.secondMenuItemState = 'unselected'
-          this.thirdMenuItemState = 'unselected'
+          this.firstMenuItemState = 'void'
+          this.secondMenuItemState = 'void'
+          this.thirdMenuItemState = 'void'
           this.bottomBorderState = 'noWidth'
           this.mainMenuState = 'inactive'
           this.mainContentState = 'invisible'
