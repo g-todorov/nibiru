@@ -10,13 +10,15 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
 
 import { ItemsService } from './items.service';
 import { SectionComponent } from './section/section.component';
+import { HamburgerMenuComponent } from './hamburger-menu/hamburger-menu.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemDetailsComponent,
-    SectionComponent
+    SectionComponent,
+    HamburgerMenuComponent
   ],
   imports: [
     BrowserModule,
