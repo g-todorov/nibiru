@@ -1,6 +1,8 @@
 <div class="main-wrapper">
   <app-hamburger-menu></app-hamburger-menu>
   <div [@mainMenuState]="mainMenuState" class="menu-wrapper">
+    <div [@topBorderState]='topBorderState' class="menu-top-border">
+    </div>
     <div>
       <div routerLink="/first" [@firstMenuItemState]='firstMenuItemState' routerLinkActive="active"(click)="onFirstMenuItemClicked()" class="menu-item one"></div>
     </div>

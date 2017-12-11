@@ -6,6 +6,7 @@ import { mainMenuState } from './animations/main-menu.state'
 import { footerState } from './animations/footer.state'
 import { mainContentState } from './animations/main-content.state'
 import { bottomBorderState } from './animations/bottom-border.state'
+import { topBorderState } from './animations/top-border.state'
 import { firstMenuItemState } from './animations/first-menu-item.state'
 import { secondMenuItemState } from './animations/second-menu-item.state'
 import { thirdMenuItemState } from './animations/third-menu-item-state'
@@ -24,7 +25,8 @@ import { routerTransition } from './animations/router-transition.state'
     firstMenuItemState,
     secondMenuItemState,
     thirdMenuItemState,
-    routerTransition
+    routerTransition,
+    topBorderState
   ]
 })
 export class AppComponent implements OnInit {
@@ -35,6 +37,7 @@ export class AppComponent implements OnInit {
   footerState: string = 'invisible'
   mainContentState: string = 'invisible'
   bottomBorderState: string = 'noWidth'
+  topBorderState: string = 'noWidth'
 
   currentYear: number = (new Date()).getFullYear();
 
@@ -58,6 +61,7 @@ export class AppComponent implements OnInit {
           this.secondMenuItemState = 'void'
           this.thirdMenuItemState = 'void'
           this.bottomBorderState = 'noWidth'
+          this.topBorderState = 'noWidth'
           this.mainMenuState = 'inactive'
           this.mainContentState = 'invisible'
           this.footerState = 'invisible'
@@ -101,6 +105,7 @@ export class AppComponent implements OnInit {
     this.footerState = 'visible'
     this.mainContentState = 'visible'
     this.bottomBorderState = 'fullWidth'
+    this.topBorderState = 'fullWidth'
   }
 
   getState(outlet) {

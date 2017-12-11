@@ -1,4 +1,4 @@
-import { trigger, state, animate, transition, style, query } from '@angular/animations';
+import { trigger, state, animate, transition, style, query, group, stagger } from '@angular/animations';
 
 export const mainMenuState =
   trigger('mainMenuState', [
@@ -6,14 +6,47 @@ export const mainMenuState =
       height: '100px',
       top: '0'
     })),
+    state('void', style({
+      height: '5px',
+      top: '50%'
+    })),
     transition('inactive <=> active', [
-      // query('.menu-item', [
-      //   style({
-      //     opacity: 0,
-      //     transform: 'translateY(20px)'
-      //   }),
-      //   animate('300ms ease-in-out', style({ height: '50px' }))
-      // ], { optional: true }),
       animate('300ms ease-in')
+    ]),
+    transition (':enter', [
+      query('.menu-bottom-border ', [
+        style({
+          transform: 'translateX(-100%)'
+        }),
+        animate('300ms ease-in-out',
+          style({
+            transform: '*'
+        }))
+      ]),
+      group([
+        style({
+          // height: '0',
+          // top: '50%'
+        }),
+        animate('300ms ease-in-out',
+          style({
+            height: '*',
+            top: '*'
+        })),
+        query('.menu-item', [
+          style({
+            opacity: 0,
+            height: 0,
+          }),
+          stagger(100, [
+            animate('300ms ease-in-out',
+              style({
+                height: '*',
+                opacity: 1
+              })
+            )
+          ])
+        ])
+      ])
     ])
   ]);
