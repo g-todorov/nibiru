@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { hamburgerMenuState } from '../animations/hamburger-menu.state';
-import { hamburgerMenuContentState } from '../animations/hamburger-menu-content.state';
+import { hamburgerMenuState } from '../animations/hamburger-menu/hamburger-menu.state';
+import { hamburgerMenuContentState } from '../animations/hamburger-menu/hamburger-menu-content.state';
 import { middleLineState } from '../animations/hamburger-menu/middle-line.state';
 import { bottomLineState } from '../animations/hamburger-menu/bottom-line.state';
 import { topLineState } from '../animations/hamburger-menu/top-line-state';

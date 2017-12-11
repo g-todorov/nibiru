@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 // import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Router, ActivatedRoute, RoutesRecognized } from '@angular/router';
 
-import { mainMenuState } from './animations/main-menu.state'
+import { mainMenuState } from './animations/main-menu/main-menu.state'
 import { footerState } from './animations/footer.state'
 import { mainContentState } from './animations/main-content.state'
-import { bottomBorderState } from './animations/bottom-border.state'
-import { topBorderState } from './animations/top-border.state'
-import { firstMenuItemState } from './animations/first-menu-item.state'
-import { secondMenuItemState } from './animations/second-menu-item.state'
-import { thirdMenuItemState } from './animations/third-menu-item-state'
+import { bottomBorderState } from './animations/main-menu/bottom-border.state'
+import { topBorderState } from './animations/main-menu/top-border.state'
+import { firstMenuItemState } from './animations/main-menu/first-menu-item.state'
+import { secondMenuItemState } from './animations/main-menu/second-menu-item.state'
+import { thirdMenuItemState } from './animations/main-menu/third-menu-item-state'
 import { routerTransition } from './animations/router-transition.state'
 
 
