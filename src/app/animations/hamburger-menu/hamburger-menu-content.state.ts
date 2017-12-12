@@ -1,4 +1,4 @@
-import { trigger, state, animate, transition, style, query, animateChild } from '@angular/animations';
+import { trigger, state, animate, transition, style, query, animateChild, group} from '@angular/animations';
 
 export const hamburgerMenuContentState =
   trigger('hamburgerMenuContentState', [
@@ -11,6 +11,27 @@ export const hamburgerMenuContentState =
       transform: 'translateX(0)'
     })),
     transition ('closed <=> opened', [
-      animate('300ms ease-in')
-    ])
+      group([
+        animate('300ms ease-in'),
+        // query('.menu-item-line', [
+        //   style({
+        //     transform: 'translateX(-100%)',
+        //   }),
+        //   animate('300ms 300ms ease-in-out')
+        // ], { optional: true }),
+      ])
+    ]),
+    // transition ('opened => closed', [
+    //   group([
+    //     animate('300ms ease-out'),
+    //     query('.menu-item-line', [
+    //       // style({
+    //       //   transform: 'translateX(-100%)',
+    //       // }),
+    //       animate('300ms ease-in-out', style({
+    //         transform: 'translateX(-100%)',
+    //       }))
+    //     ], { optional: true }),
+    //   ])
+    // ])
   ])
