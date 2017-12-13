@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 import { Location } from '@angular/common';
 
 import { ItemsService } from '../items.service';
@@ -12,17 +12,32 @@ import { ItemsService } from '../items.service';
 export class ItemDetailsComponent implements OnInit {
   @Input() hero: any;
   item: {};
+  currentSection: string;
+  nextItem: any;
+  prevItem: any;
 
-  constructor(private route: ActivatedRoute, private itemsService: ItemsService, private location: Location) { }
+  constructor(private route: ActivatedRoute, private router: Router, private itemsService: ItemsService, private location: Location) { }
 
   ngOnInit() {
     const routerSubscription = this.route.params.subscribe(params => {
-      this.item = this.itemsService.getItem(params.name)
+      this.currentSection = params.section;
+      this.item = this.itemsService.getItem(params.name);
     });
   }
 
   goBack() {
-    this.location.back();
+    // Eventually will have to keep scroll postion of the previous page
+    this.router.navigate(['/' + this.currentSection]);
+  }
+
+  goToNextItem() {
+    this.nextItem = this.itemsService.getNextItem(this.currentSection, this.item);
+    this.router.navigate(['/' + this.currentSection + '/' + this.nextItem.name]);
+  }
+
+  goTopreviousItem() {
+    this.prevItem = this.itemsService.getPrevItem(this.currentSection, this.item);
+    this.router.navigate(['/' + this.currentSection + '/' + this.prevItem.name]);
   }
 
 }

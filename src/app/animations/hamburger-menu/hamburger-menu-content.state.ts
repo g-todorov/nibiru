@@ -10,28 +10,20 @@ export const hamburgerMenuContentState =
       background: 'black',
       transform: 'translateX(0)'
     })),
-    transition ('closed <=> opened', [
+    transition ('closed => opened', [
       group([
         animate('300ms ease-in'),
-        // query('.menu-item-line', [
-        //   style({
-        //     transform: 'translateX(-100%)',
-        //   }),
-        //   animate('300ms 300ms ease-in-out')
-        // ], { optional: true }),
+        query('.menu-item-line', [
+          style({
+            transform: 'translateX(-100%)',
+          }),
+          animate('300ms 300ms ease-in-out')
+        ], { optional: true }),
       ])
     ]),
-    // transition ('opened => closed', [
-    //   group([
-    //     animate('300ms ease-out'),
-    //     query('.menu-item-line', [
-    //       // style({
-    //       //   transform: 'translateX(-100%)',
-    //       // }),
-    //       animate('300ms ease-in-out', style({
-    //         transform: 'translateX(-100%)',
-    //       }))
-    //     ], { optional: true }),
-    //   ])
-    // ])
+    transition ('opened => closed', [
+      group([
+        animate('300ms ease-out'),
+      ])
+    ])
   ])

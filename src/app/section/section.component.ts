@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SectionComponent implements OnInit {
   items: [any];
+  sectionName: string;
 
   constructor(private itemsService: ItemsService, private route: ActivatedRoute) { }
 

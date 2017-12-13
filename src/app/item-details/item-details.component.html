@@ -3,6 +3,12 @@
     item-details works!
     {{item.name}}
   </div>
+  <div class="previous-button" (click)="goToNextItem()">
+    next
+  </div>
+  <div class="next-button" (click)="goTopreviousItem()">
+    prev
+  </div>
   <span class="close-button" (click)="goBack()">
     <fa name="close" size='2x'></fa>
   </span>
