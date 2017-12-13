@@ -1,0 +1,33 @@
+{
+  "reporter": "stylint-stylish",
+  "colons": "never",
+  "colors":{
+    "expect": "always",
+    "error": true
+  },
+  "commaSpace": "always",
+  "duplicates": true,
+  "efficient": "always",
+  "exclude": ["node_modules/**/*"],
+  "indentPref": 2,
+  "important": {
+    "expect": true,
+    "error": true
+  },
+  "leadingZero": "never",
+  "mixed": true,
+  "namingConvetion": "lowercase-dash",
+  "namingConvetionStrict": "true",
+  "placeholder": "always",
+  "prefixVarsWithDollar": {
+    "expect": "always",
+    "error": true
+  },
+  "semicolons": "never",
+  "sortOrder": {
+    "expect": "alphabetical",
+    "error": true
+  },
+  "stackedProperties": "never",
+  "zeroUnits": "never"
+}

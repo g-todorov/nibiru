@@ -73,7 +73,7 @@ export class ItemsService {
   }
 
   getItem(name: string): any {
-    const allItems = this.itemsFirst.concat(this.itemsSecond, this.itemsThird)
+    const allItems = this.itemsFirst.concat(this.itemsSecond, this.itemsThird);
     return allItems.find(item =>
       item.name === name
     );

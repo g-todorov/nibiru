@@ -15,4 +15,4 @@ export const firstMenuItemState =
     })),
     transition ('void <=> *', animate('300ms ease-in')),
     transition ('unselected <=> selected', animate('300ms ease-in')),
-  ])
+  ]);

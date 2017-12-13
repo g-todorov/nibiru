@@ -19,8 +19,8 @@ import { topLineState } from '../animations/hamburger-menu/top-line-state';
   ]
 })
 export class HamburgerMenuComponent implements OnInit {
-  hamburgerMenuState: string = 'closed';
-  munuItemHoverState: string = 'notHovered';
+  hamburgerMenuState = 'closed';
+  munuItemHoverState = 'notHovered';
 
   constructor() { }
 
@@ -29,19 +29,17 @@ export class HamburgerMenuComponent implements OnInit {
 
   toggleHamburgerMenu(state) {
     if (state === 'closed') {
-      this.hamburgerMenuState = 'opened'
-    }
-    else if (state === 'opened') {
-      this.hamburgerMenuState = 'closed'
+      this.hamburgerMenuState = 'opened';
+    } else if (state === 'opened') {
+      this.hamburgerMenuState = 'closed';
     }
   }
 
   onMenuItemMouseEnter(state) {
     if (state === 'notHovered') {
-      this.munuItemHoverState = 'hovered'
-    }
-    else if (state === 'hovered') {
-      this.munuItemHoverState = 'notHovered'
+      this.munuItemHoverState = 'hovered';
+    } else if (state === 'hovered') {
+      this.munuItemHoverState = 'notHovered';
     }
   }
 

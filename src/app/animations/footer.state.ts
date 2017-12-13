@@ -6,4 +6,4 @@ export const footerState =
       bottom: '0'
     })),
     transition ('invisible <=> visible', animate('300ms ease-in')),
-  ])
+  ]);

@@ -19,4 +19,4 @@ export const hamburgerMenuState =
       //   animateChild()
       // ], { optional: true }),
       animate('300ms ease-in')]),
-  ])
+  ]);

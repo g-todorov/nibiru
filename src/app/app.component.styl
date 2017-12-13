@@ -4,45 +4,41 @@
   position relative
 
   .menu-wrapper
-    // border-bottom: 1px solid #ffffff
-    // border-top: 1px solid #ffffff
-    display: flex
+    display flex
     height 200px
     justify-content center
+    overflow hidden
     position fixed
     top calc(50% - 75px)
-    width: 100%
-    overflow hidden
+    width 100%
 
     .menu-bottom-border
-      display block
-      width 50%
-      height 100px
       background black
-      position absolute
-      left 0
-      bottom 0px
+      bottom 0
+      display block
       height 5px
+      left 0
+      position absolute
+      width 50%
 
     .menu-top-border
-      display block
-      width 50%
-      height 100px
       background black
+      display block
+      height 5px
       position absolute
       right 0
-      top 0px
-      height 5px
+      top 0
+      width 50%
 
     .menu-item
-      border 1px solid #ffffff
+      border 1px solid white
+      height 150px
       margin 20px
       width 150px
-      height 150px
 
 .content-wrapper
-  background: white
-  display: flex
+  background white
+  display flex
   height 0
   justify-content: center
   position fixed
@@ -54,8 +50,8 @@
     display none
 
 .footer-wrapper
-  border-top: 1px solid #ffffff
   align-content center
+  border-top 1px solid white
   bottom -25px
   display flex
   height 25px

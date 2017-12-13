@@ -26,4 +26,4 @@ export const hamburgerMenuContentState =
         animate('300ms ease-out'),
       ])
     ])
-  ])
+  ]);

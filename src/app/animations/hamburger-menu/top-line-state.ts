@@ -22,4 +22,4 @@ export const topLineState =
         style({top: '*', offset: 1.0})
       ])
     ))
-  ])
+  ]);

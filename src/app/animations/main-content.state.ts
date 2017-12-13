@@ -8,4 +8,4 @@ export const mainContentState =
       top: '100px'
     })),
     transition ('invisible <=> visible', animate('300ms ease-in')),
-  ])
+  ]);

@@ -22,4 +22,4 @@ export const bottomLineState =
         style({bottom: '*', offset: 1.0})
       ])
     ))
-  ])
+  ]);

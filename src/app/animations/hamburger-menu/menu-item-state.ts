@@ -13,4 +13,4 @@ export const hamburgerMenuContentState =
     transition ('closed <=> opened', [
       animate('300ms ease-in')
     ])
-  ])
+  ]);
