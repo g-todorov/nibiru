@@ -1,5 +1,10 @@
 <div class="items-section">
-  <div class="item-wrapper" *ngFor="let item of items">
-    <a href="" [routerLink]="[item.name]">{{item.name}}</a>
+  <div class="items-wrapper content-inner-wrapper">
+    <div class="item-wrapper" *ngFor="let item of items">
+      <div class="item-descriprion">
+  
+        <a href="" [routerLink]="[item.name]">{{item.name}}</a>
+      </div>
+    </div>
   </div>
 </div>

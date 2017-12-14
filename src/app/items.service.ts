@@ -16,7 +16,15 @@ export class ItemsService {
       description: 'test2'
     },
     {
-      name: 'test3',
+      name: 'test33333',
+      description: 'test3'
+    },
+    {
+      name: 'test31111',
+      description: 'test3'
+    },
+    {
+      name: 'test3222231',
       description: 'test3'
     }
   ];

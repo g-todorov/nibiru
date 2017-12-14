@@ -9,11 +9,17 @@
   padding $space-large
   position relative
 
+.content-inner-wrapper
+  width $content-inner-width
+  display flex
+  justify-content: center
+
 .border-wrapper
   border 1px solid $black-almost
   height 100%
-  width 100%
+  overflow hidden
   position relative
+  width 100%
 
   .menu-wrapper
     display flex
@@ -25,18 +31,18 @@
     width 100%
 
     .menu-bottom-border
-      background black
+      background $black-almost
       bottom 0
       display block
-      height 5px
+      height 1px
       left 0
       position absolute
       width 50%
 
     .menu-top-border
-      background black
+      background $black-almost
       display block
-      height 5px
+      height 1px
       position absolute
       right 0
       top 0
@@ -53,7 +59,7 @@
         border 1px solid $black-almost
 
 .content-wrapper
-  background white
+  background $white-smoke
   display flex
   height 0
   justify-content: center
@@ -67,7 +73,7 @@
 
 .footer-wrapper
   align-content center
-  border-top 1px solid white
+  border-top 1px solid $white-smoke
   bottom -25px
   display flex
   height 25px
