@@ -1,6 +1,18 @@
+@import 'variables'
+
 .main-wrapper
-  background grey
+  align-items center
+  background $white-smoke
+  display flex
+  height 100vh
+  justify-content center
+  padding $space-large
+  position relative
+
+.border-wrapper
+  border 1px solid $black-almost
   height 100%
+  width 100%
   position relative
 
   .menu-wrapper
@@ -8,7 +20,7 @@
     height 200px
     justify-content center
     overflow hidden
-    position fixed
+    position absolute
     top calc(50% - 75px)
     width 100%
 
@@ -31,17 +43,21 @@
       width 50%
 
     .menu-item
-      border 1px solid white
       height 150px
       margin 20px
       width 150px
+
+      .menu-item-content
+        height 100%
+        width 100%
+        border 1px solid $black-almost
 
 .content-wrapper
   background white
   display flex
   height 0
   justify-content: center
-  position fixed
+  position absolute
   top calc(50% + 75px)
   width 100%
   z-index 1
@@ -56,5 +72,5 @@
   display flex
   height 25px
   justify-content space-around
-  position fixed
+  position absolute
   width 100%

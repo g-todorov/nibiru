@@ -6,6 +6,7 @@
     "error": true
   },
   "commaSpace": "always",
+  "cssLiteral": false,
   "duplicates": true,
   "efficient": "always",
   "exclude": ["node_modules/**/*"],

@@ -1,34 +1,60 @@
 <div class="main-wrapper">
-  <app-hamburger-menu></app-hamburger-menu>
-  <div [@mainMenuState]="mainMenuState" class="menu-wrapper">
-    <div [@topBorderState]='topBorderState' class="menu-top-border">
+  <!-- <app-hamburger-menu></app-hamburger-menu> -->
+  <div class="border-wrapper">
+    <div [@mainMenuState]="mainMenuState" class="menu-wrapper">
+      <div [@topBorderState]='topBorderState' class="menu-top-border">
+      </div>
+      <div>
+        <div
+          class="menu-item one"
+          routerLink="/first"
+          [@firstMenuItemState]='firstMenuItemState'
+          routerLinkActive="active"
+          (click)="onFirstMenuItemClicked()" >
+          <div class="menu-item-content">
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="menu-item two"
+          routerLink="/second"
+          [@secondMenuItemState]='secondMenuItemState'
+          routerLinkActive="active"
+          (click)="onSecondMenuItemClicked()">
+          <div class="menu-item-content">
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="menu-item three"
+          routerLink="/third"
+          [@thirdMenuItemState]='thirdMenuItemState'
+          routerLinkActive="active"
+          (click)="onThirdMenuItemClicked()">
+          <div class="menu-item-content">
+          </div>
+        </div>
+      </div>
+      <div [@bottomBorderState]='bottomBorderState' class="menu-bottom-border">
+      </div>
     </div>
-    <div>
-      <div routerLink="/first" [@firstMenuItemState]='firstMenuItemState' routerLinkActive="active"(click)="onFirstMenuItemClicked()" class="menu-item one"></div>
+    <div [@mainContentState]='mainContentState' class="content-wrapper">
+      <div class="router-wrapper" [@routerTransition]="getState(o)">
+        <router-outlet #o="outlet"></router-outlet>
+      </div>
     </div>
-    <div>
-      <div routerLink="/second" [@secondMenuItemState]='secondMenuItemState' routerLinkActive="active" (click)="onSecondMenuItemClicked()" class="menu-item two"></div>
+    <div [@footerState]='footerState' class="footer-wrapper">
+      <span class="copyryghts">
+        Copyrights © {{ currentYear }}
+      </span>
+      <span class="social-links">
+        <fa name="facebook"></fa>
+        <fa name="behance"></fa>
+        <fa name="pinterest"></fa>
+      </span>
     </div>
-    <div>
-      <div routerLink="/third" [@thirdMenuItemState]='thirdMenuItemState' routerLinkActive="active" (click)="onThirdMenuItemClicked()" class="menu-item three "></div>
-    </div>
-    <div [@bottomBorderState]='bottomBorderState' class="menu-bottom-border">
-    </div>
-  </div>
-  <div [@mainContentState]='mainContentState' class="content-wrapper">
-    <div class="router-wrapper" [@routerTransition]="getState(o)">
-      <router-outlet #o="outlet"></router-outlet>
-    </div>
-  </div>
-  <div [@footerState]='footerState' class="footer-wrapper">
-    <span class="copyryghts">
-      Copyrights © {{ currentYear }}
-    </span>
-    <span class="social-links">
-      <fa name="facebook"></fa>
-      <fa name="behance"></fa>
-      <fa name="pinterest"></fa>
-    </span>
   </div>
 </div>
 

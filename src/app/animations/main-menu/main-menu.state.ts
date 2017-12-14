@@ -1,10 +1,14 @@
 import { trigger, state, animate, transition, style, query, group, stagger } from '@angular/animations';
 
+const variables = require('../../../styles.styl');
+
+console.log(variables);
+
 export const mainMenuState =
   trigger('mainMenuState', [
     state('active', style({
-      height: '100px',
-      top: '0'
+      height: variables.menuHeight,
+      top: 0
     })),
     state('void', style({
       height: '5px',

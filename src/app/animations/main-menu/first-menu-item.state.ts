@@ -9,9 +9,10 @@ export const firstMenuItemState =
       height: '50px'
     })),
     state('selected', style({
-      background: 'black',
       width: '150px',
-      height: '50px'
+      height: '50px',
+      border: '1px solid black',
+      padding: '10px'
     })),
     transition ('void <=> *', animate('300ms ease-in')),
     transition ('unselected <=> selected', animate('300ms ease-in')),

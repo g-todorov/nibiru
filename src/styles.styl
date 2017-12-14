@@ -1,10 +1,10 @@
-*
-  box-sizing border-box
+@import 'globals'
 
-html
-  height 100%
+@import 'variables'
 
-body
-  font-family 'Space Mono', monospace
-  height 100%
-  margin 0
+$space-large = $space * 2
+
+@css
+:export {
+  variables: @import 'variables';
+}
