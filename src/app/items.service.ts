@@ -5,27 +5,33 @@ export class ItemsService {
   itemsFirst: [any] = [
     {
       name: 'test',
-      description: 'test'
+      description: 'test',
+      path: 'assets/images/1.jpg'
     },
     {
       name: 'test1',
-      description: 'test1'
+      description: 'test1',
+      path: 'assets/images/2.jpg'
     },
     {
       name: 'test2',
-      description: 'test2'
+      description: 'test2',
+      path: 'assets/images/3.jpg'
     },
     {
       name: 'test33333',
-      description: 'test3'
+      description: 'test3',
+      path: 'assets/images/4.jpg'
     },
     {
       name: 'test31111',
-      description: 'test3'
+      description: 'test3',
+      path: 'assets/images/5.jpg'
     },
     {
       name: 'test3222231',
-      description: 'test3'
+      description: 'test3',
+      path: 'assets/images/6.jpg'
     }
   ];
 

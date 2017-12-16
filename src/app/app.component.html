@@ -4,38 +4,36 @@
     <div [@mainMenuState]="mainMenuState" class="menu-wrapper">
       <div [@topBorderState]='topBorderState' class="menu-top-border">
       </div>
-        <div class="content-inner-wrapper">
-          <div>
-            <div
-              class="menu-item one"
-              routerLink="/first"
-              [@firstMenuItemState]='firstMenuItemState'
-              routerLinkActive="active"
-              (click)="onFirstMenuItemClicked()" >
-              <div class="menu-item-content">
-              </div>
+        <div>
+          <div
+            class="menu-item one"
+            routerLink="/first"
+            [@firstMenuItemState]='firstMenuItemState'
+            routerLinkActive="active"
+            (click)="onFirstMenuItemClicked()" >
+            <div class="menu-item-content">
             </div>
           </div>
-          <div>
-            <div
-              class="menu-item two"
-              routerLink="/second"
-              [@secondMenuItemState]='secondMenuItemState'
-              routerLinkActive="active"
-              (click)="onSecondMenuItemClicked()">
-              <div class="menu-item-content">
-              </div>
+        </div>
+        <div>
+          <div
+            class="menu-item two"
+            routerLink="/second"
+            [@secondMenuItemState]='secondMenuItemState'
+            routerLinkActive="active"
+            (click)="onSecondMenuItemClicked()">
+            <div class="menu-item-content">
             </div>
           </div>
-          <div>
-            <div
-              class="menu-item three"
-              routerLink="/third"
-              [@thirdMenuItemState]='thirdMenuItemState'
-              routerLinkActive="active"
-              (click)="onThirdMenuItemClicked()">
-              <div class="menu-item-content">
-              </div>
+        </div>
+        <div>
+          <div
+            class="menu-item three"
+            routerLink="/third"
+            [@thirdMenuItemState]='thirdMenuItemState'
+            routerLinkActive="active"
+            (click)="onThirdMenuItemClicked()">
+            <div class="menu-item-content">
             </div>
           </div>
         </div>

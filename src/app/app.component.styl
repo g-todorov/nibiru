@@ -9,11 +9,6 @@
   padding $space-large
   position relative
 
-.content-inner-wrapper
-  width $content-inner-width
-  display flex
-  justify-content: center
-
 .border-wrapper
   border 1px solid $black-almost
   height 100%
@@ -54,15 +49,16 @@
       width 150px
 
       .menu-item-content
+        border 1px solid $black-almost
         height 100%
         width 100%
-        border 1px solid $black-almost
 
 .content-wrapper
   background $white-smoke
   display flex
   height 0
   justify-content: center
+  overflow-x auto
   position absolute
   top calc(50% + 75px)
   width 100%
@@ -77,6 +73,6 @@
   bottom -25px
   display flex
   height 25px
-  justify-content space-around
+  justify-content space-between
   position absolute
   width 100%
