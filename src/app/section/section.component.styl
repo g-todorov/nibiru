@@ -1,20 +1,25 @@
 @import 'variables'
 
-// THIS IS MIXIN
 .content-inner-wrapper
-  width $content-inner-width
+  // width $content-inner-width
   display flex
-  justify-content: center
   flex-wrap wrap
+  justify-content: center
+  margin: 0 auto
+  width: 50%
+  max-width 50%
 
-  .item-descriprion
-    margin $space
-    height 300px
+  .item-thumbnail
     border 1px solid $black-almost
+    display flex
+    height 300px
+    margin $space
+    overflow hidden
 
   .item-wrapper
     flex 1 1 50%
+    width 50%
 
     img
-      max-width 100%
-      max-height 100%
+      // max-height 100%
+      // max-width 100%

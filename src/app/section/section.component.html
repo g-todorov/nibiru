@@ -1,9 +1,9 @@
 <div class="items-section">
   <div class="items-wrapper content-inner-wrapper">
     <div class="item-wrapper" *ngFor="let item of items">
-      <div class="item-descriprion">
+      <div class="item-thumbnail">
         <a href="" [routerLink]="[item.name]">
-          <img [src]="item.path" alt="MDN">
+          <img [src]="item.path" [alt]="item.name">
         </a>
       </div>
     </div>

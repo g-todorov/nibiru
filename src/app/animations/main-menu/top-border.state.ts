@@ -3,7 +3,8 @@ import { trigger, state, animate, transition, style } from '@angular/animations'
 export const topBorderState =
   trigger('topBorderState', [
     state('fullWidth', style ({
-      width: '100%'
+      width: '100%',
+      opacity: 0
     })),
     transition ('noWidth <=> fullWidth', animate('300ms ease-in')),
     transition (':enter', [
