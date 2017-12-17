@@ -94,10 +94,10 @@ export class ItemsService {
   }
 
   getNextItem(section: string, currentItem: any): any {
-    // let allItems = this.itemsFirst.concat(this.itemsSecond, this.itemsThird)
     const sectionItems = this.getItems(section);
     const currentItemIndex = sectionItems.findIndex(item => item.name === currentItem.name);
     let nextItem;
+    
     if (sectionItems[currentItemIndex + 1]) {
       nextItem = sectionItems[currentItemIndex + 1];
     } else {
