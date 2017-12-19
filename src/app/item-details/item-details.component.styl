@@ -1,16 +1,57 @@
-.item-details
-  align-items center
-  background yellow
-  display flex
-  height 100%
+@import 'variables'
+
+.item-details-wrapper
+  background $black-almost
   justify-content center
   left 0
+  padding $space-large
   position fixed
   top 0
+  height 100%
   width 100%
+  color $white-smoke
+
+.item-details
+  align-items center
+  display flex
+  border 1px solid $white-smoke
+  height 100%
+  width 100%
+  justify-content center
+  align-content center
+  position relative
 
   .description
-    border 1px solid blue
+    // border 1px solid blue
+    position relative
+
+  // MOVE INTO MIXIN
+  .content-inner-wrapper
+    display flex
+    flex-wrap wrap
+    justify-content: center
+    margin: 0 auto
+    width: 50%
+    max-width 50%
+
+  .item-name
+    font-size 60px
+    color $black-almost
+    position absolute
+    bottom -40px
+
+  //MIXIN
+  .stroketext
+    // color: white;
+    text-shadow:
+    -1px -1px 0 $white-smoke,
+    1px -1px 0 $white-smoke,
+    -1px 1px 0 $white-smoke,
+    1px 1px 0 $white-smoke;  
+
+  .image-wrapper
+    img 
+      width 100%
 
   .close-button
     position absolute
@@ -18,7 +59,14 @@
     top 0
 
   .previous-button
+    left 0
+
+  .next-button
+    right 0
+
+  .previous-button
   .next-button
     background white
     height 50px
     width 50px
+    position absolute

@@ -10,7 +10,6 @@ import { ItemsService } from '../items.service';
   styleUrls: ['./item-details.component.styl'],
 })
 export class ItemDetailsComponent implements OnInit {
-  @Input() hero: any;
   item: {};
   currentSection: string;
   nextItem: any;

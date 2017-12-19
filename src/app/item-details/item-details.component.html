@@ -1,15 +1,22 @@
-<div class="item-details">
-  <div class="description">
-    item-details works!
-    {{item.name}}
+<div class="item-details-wrapper">
+  <div class="item-details">
+    <div class="description content-inner-wrapper">
+      <div class="image-wrapper">
+        <img [src]="item.path" [alt]="item.name">
+      </div>
+      <div class="item-name stroketext">
+        {{item.name}}
+      </div>
+    </div>
+    <div class="previous-button" (click)="goToNextItem()">
+      next
+    </div>
+    <div class="next-button" (click)="goTopreviousItem()">
+      prev
+    </div>
+    <span class="close-button" (click)="goBack()">
+      <fa name="close" size='2x'></fa>
+    </span>
   </div>
-  <div class="previous-button" (click)="goToNextItem()">
-    next
-  </div>
-  <div class="next-button" (click)="goTopreviousItem()">
-    prev
-  </div>
-  <span class="close-button" (click)="goBack()">
-    <fa name="close" size='2x'></fa>
-  </span>
 </div>
+

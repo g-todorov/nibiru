@@ -1,5 +1,13 @@
 @import 'variables'
 
+.items-section
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: -17px;
+  overflow-y: scroll;
+
 .content-inner-wrapper
   // width $content-inner-width
   display flex
@@ -9,17 +17,41 @@
   width: 50%
   max-width 50%
 
-  .item-thumbnail
-    border 1px solid $black-almost
-    display flex
-    height 300px
-    margin $space
-    overflow hidden
 
   .item-wrapper
     flex 1 1 50%
     width 50%
 
+    .item-thumbnail
+      border 1px solid $black-almost
+      display flex
+      height 300px
+      margin $space
+      overflow hidden
+      position relative
+
+      .item-link
+        &:hover:after
+          opacity 0
+          transition all .3s
+
+        &:after
+          background $white-smoke
+          bottom 0
+          content ''
+          left 0
+          opacity: 0.8
+          position absolute
+          right 0
+          top 0
+          transition all .3s
+
     img
+      opacity: 0.9
       // max-height 100%
       // max-width 100%
+    
+    img:after
+      content ''
+
+      // img:hover

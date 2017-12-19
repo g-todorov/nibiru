@@ -2,7 +2,7 @@
   <div class="items-wrapper content-inner-wrapper">
     <div class="item-wrapper" *ngFor="let item of items">
       <div class="item-thumbnail">
-        <a href="" [routerLink]="[item.name]">
+        <a class="item-link" href="" [routerLink]="[item.name]">
           <img [src]="item.path" [alt]="item.name">
         </a>
       </div>
