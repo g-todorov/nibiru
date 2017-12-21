@@ -54,15 +54,61 @@
     right 0
     top 0
 
+  .previous-button-wrapper
+    height 20px
+    left 10px
+    position absolute
+    width 50px
+
+    &:hover
+      .previous-button
+        &:after
+          transform: rotate(-45deg)
+          transition all .3s
+
+        &:before
+          transform-origin: 0 100%
+          transform: rotate(45deg)
+          transition all .3s
+
+    &:active
+      transform translateX(-5px)
+      transition all .3s
+
   .previous-button
-    left 0
+    background $white-smoke
+    height 3px
+    position absolute
+    top calc(50% - 3px)
+    transition all .3s
+    width 50px
+
+    &:after
+      background $white-smoke
+      content ''
+      height 3px
+      position absolute
+      transform-origin 0 0
+      transition all .3s
+      width 20px
+
+    &:before
+      background $white-smoke
+      content ''
+      height 3px
+      position absolute
+      transform-origin 0 0
+      transition all .3s
+      width 20px
+
+  .next-button-wrapper
+    height 20px
+    right 10px
+    position absolute
+    width 50px
 
   .next-button
     right 0
+    background $white-smoke
+    height 3px
 
-  .previous-button
-  .next-button
-    background white
-    height 50px
-    width 50px
-    position absolute

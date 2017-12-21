@@ -8,15 +8,14 @@
         {{item.name}}
       </div>
     </div>
-    <div class="previous-button" (click)="goToNextItem()">
-      next
+    <div class="next-button-wrapper">
+      <div class="next-button" (click)="goToNextItem()"></div>
     </div>
-    <div class="next-button" (click)="goTopreviousItem()">
-      prev
+    <div class="previous-button-wrapper" (click)="goTopreviousItem()">
+      <div class="previous-button" ></div>
     </div>
     <span class="close-button" (click)="goBack()">
       <fa name="close" size='2x'></fa>
     </span>
   </div>
 </div>
-
