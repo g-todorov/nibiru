@@ -34,9 +34,18 @@ export class ItemDetailsComponent implements OnInit {
     this.router.navigate(['/' + this.currentSection + '/' + this.nextItem.name]);
   }
 
-  goTopreviousItem() {
+  goToPreviousItem() {
     this.prevItem = this.itemsService.getPrevItem(this.currentSection, this.item);
     this.router.navigate(['/' + this.currentSection + '/' + this.prevItem.name]);
+  }
+
+  onKeydown(event) {
+    // MOVE THIS INTO DIRECTIVE
+    if (event.key === 'ArrowRight') {
+      this.goToNextItem();
+    } else if (event.key === 'ArrowLeft') {
+      this.goToPreviousItem();
+    }
   }
 
 }

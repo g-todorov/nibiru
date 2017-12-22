@@ -5,12 +5,12 @@ export class ItemsService {
   itemsFirst: [any] = [
     {
       name: 'test',
-      description: 'test',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       path: 'assets/images/1.jpg'
     },
     {
       name: 'test1',
-      description: 'test1',
+      description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia ',
       path: 'assets/images/2.jpg'
     },
     {
@@ -97,7 +97,7 @@ export class ItemsService {
     const sectionItems = this.getItems(section);
     const currentItemIndex = sectionItems.findIndex(item => item.name === currentItem.name);
     let nextItem;
-    
+
     if (sectionItems[currentItemIndex + 1]) {
       nextItem = sectionItems[currentItemIndex + 1];
     } else {

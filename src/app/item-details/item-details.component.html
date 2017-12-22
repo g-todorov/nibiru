@@ -1,17 +1,20 @@
-<div class="item-details-wrapper">
+<div class="item-details-wrapper" (window:keydown)="onKeydown($event)">
   <div class="item-details">
     <div class="description content-inner-wrapper">
       <div class="image-wrapper">
         <img [src]="item.path" [alt]="item.name">
       </div>
-      <div class="item-name stroketext">
+      <div class="item-name">
         {{item.name}}
+      </div>
+      <div class="item-description">
+        {{item.description}}
       </div>
     </div>
     <div class="next-button-wrapper">
       <div class="next-button" (click)="goToNextItem()"></div>
     </div>
-    <div class="previous-button-wrapper" (click)="goTopreviousItem()">
+    <div class="previous-button-wrapper" (click)="goToPreviousItem()">
       <div class="previous-button" ></div>
     </div>
     <span class="close-button" (click)="goBack()">
