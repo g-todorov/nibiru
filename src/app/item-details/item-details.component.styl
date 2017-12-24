@@ -34,6 +34,7 @@
     margin 0 auto
     max-width 50%
     width 50%
+    // height: 100%
 
   .item-name
     bottom -40px
@@ -45,6 +46,7 @@
     top calc(50% - 50px)
     transform rotate(270deg)
     height 100px
+    width 400px
 
   .stroketext
     text-border()
@@ -55,8 +57,37 @@
 
   .close-button
     position absolute
+    width 20px
+    height: 20px
     right 0
     top 0
+    cursor: pointer
+
+    &:before
+      content ''
+      position absolute
+      width 100%
+      height: 1px
+      background: white
+      transform: translateY(10px) rotate(45deg)
+      transition all .3s
+    
+    &:hover:before
+      transform: translateY(10px) rotate(-45deg)
+      transition all .3s
+
+    &:after
+      content ''
+      position absolute
+      width 100%
+      height: 1px
+      background: white
+      transform: translateY(10px) rotate(-45deg)
+      transition all .3s
+
+    &:hover:after
+      transform: translateY(10px) rotate(45deg)
+      transition all .3s
 
   .previous-button-wrapper
     height 20px
@@ -106,13 +137,41 @@
       width 20px
 
   .next-button-wrapper
+    align-items center
+    cursor pointer
+    display flex
     height 20px
+    justify-content center
     position absolute
     right 10px
     width 50px
+    overflow hidden
 
-  .next-button
-    background $white-smoke
-    height 3px
-    right 0
+    .next-button
+      user-select none
+
+    &:after
+      content ''
+      height 1px
+      background white
+      width 100%
+      position: absolute
+      left 0
+      width: 100%
+      top calc(50% + 1px)
+      transform translateX(-100%)
+      transition all .3s
+
+    // &:after:active
+    //   transform translateX(-5%)      
+    //   transition all .3s
+
+    &:hover:after
+      transform translateX(0)
+      transition all .3s
+
+  // .next-button
+  //   background $white-smoke
+  //   height 3px
+  //   right 0
 

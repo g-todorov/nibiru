@@ -12,6 +12,7 @@ import { ItemsService } from './items.service';
 import { SectionComponent } from './section/section.component';
 import { HamburgerMenuComponent } from './hamburger-menu/hamburger-menu.component';
 import { FullscreenSliderComponent } from './fullscreen-slider/fullscreen-slider.component';
+import { MainMenuComponent } from './main-menu/main-menu.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FullscreenSliderComponent } from './fullscreen-slider/fullscreen-slider
     ItemDetailsComponent,
     SectionComponent,
     HamburgerMenuComponent,
-    FullscreenSliderComponent
+    FullscreenSliderComponent,
+    MainMenuComponent
   ],
   imports: [
     BrowserModule,

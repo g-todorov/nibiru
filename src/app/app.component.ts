@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Router, ActivatedRoute, RoutesRecognized } from '@angular/router';
 
 import { mainMenuState } from './animations/main-menu/main-menu.state';
@@ -7,9 +6,6 @@ import { footerState } from './animations/footer.state';
 import { mainContentState } from './animations/main-content.state';
 import { bottomBorderState } from './animations/main-menu/bottom-border.state';
 import { topBorderState } from './animations/main-menu/top-border.state';
-import { firstMenuItemState } from './animations/main-menu/first-menu-item.state';
-import { secondMenuItemState } from './animations/main-menu/second-menu-item.state';
-import { thirdMenuItemState } from './animations/main-menu/third-menu-item-state';
 import { routerTransition } from './animations/router-transition.state';
 
 
@@ -18,22 +14,13 @@ import { routerTransition } from './animations/router-transition.state';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.styl'],
   animations: [
-    bottomBorderState,
     footerState,
     mainContentState,
-    mainMenuState,
-    firstMenuItemState,
-    secondMenuItemState,
-    thirdMenuItemState,
-    routerTransition,
-    topBorderState
+    routerTransition
   ]
 })
 export class AppComponent implements OnInit {
   mainMenuState = 'inactive';
-  firstMenuItemState;
-  secondMenuItemState;
-  thirdMenuItemState;
   footerState = 'invisible';
   mainContentState = 'invisible';
   bottomBorderState = 'noWidth';
@@ -47,17 +34,14 @@ export class AppComponent implements OnInit {
     this.router.events.forEach((event) => {
       if (event instanceof RoutesRecognized) {
         if (event.state.url === '/first') {
-          this.onFirstMenuItemClicked();
+          this.activateLandingPage();
         } else if (event.state.url === '/second') {
-          this.onSecondMenuItemClicked();
+          this.activateLandingPage();
         } else if (event.state.url === '/third') {
-          this.onThirdMenuItemClicked();
+          this.activateLandingPage();
         }
 
         if (event.state.url === '/') {
-          this.firstMenuItemState = 'void';
-          this.secondMenuItemState = 'void';
-          this.thirdMenuItemState = 'void';
           this.bottomBorderState = 'noWidth';
           this.topBorderState = 'noWidth';
           this.mainMenuState = 'inactive';
@@ -74,29 +58,6 @@ export class AppComponent implements OnInit {
     });
   }
 
-  onFirstMenuItemClicked() {
-    this.firstMenuItemState = 'selected';
-    this.secondMenuItemState = 'unselected';
-    this.thirdMenuItemState = 'unselected';
-
-    this.activateLandingPage();
-  }
-
-  onSecondMenuItemClicked() {
-    this.secondMenuItemState = 'selected';
-    this.firstMenuItemState = 'unselected';
-    this.thirdMenuItemState = 'unselected';
-
-    this.activateLandingPage();
-  }
-
-  onThirdMenuItemClicked() {
-    this.thirdMenuItemState = 'selected';
-    this.firstMenuItemState = 'unselected';
-    this.secondMenuItemState = 'unselected';
-
-    this.activateLandingPage();
-  }
 
   activateLandingPage() {
     this.mainMenuState = 'active';
