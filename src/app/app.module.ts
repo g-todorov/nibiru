@@ -11,8 +11,6 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
 
 import { ItemsService } from './items.service';
 import { SectionComponent } from './section/section.component';
-import { HamburgerMenuComponent } from './hamburger-menu/hamburger-menu.component';
-import { FullscreenSliderComponent } from './fullscreen-slider/fullscreen-slider.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { MouseParallaxDirective } from './mouse-parallax.directive';
 
@@ -22,8 +20,6 @@ import { MouseParallaxDirective } from './mouse-parallax.directive';
     AppComponent,
     ItemDetailsComponent,
     SectionComponent,
-    HamburgerMenuComponent,
-    FullscreenSliderComponent,
     MainMenuComponent,
     Parallax,
     MouseParallaxDirective
