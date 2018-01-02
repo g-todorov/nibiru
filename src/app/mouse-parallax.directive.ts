@@ -5,24 +5,20 @@ import { Directive, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 })
 export class MouseParallaxDirective implements AfterViewInit  {
   // @ViewChild("appMouseParallax") appMouseParallax: ElementRef;
-  
-  constructor(private element: ElementRef) { 
+
+  constructor(private element: ElementRef) {
   }
 
   ngAfterViewInit() {
-    let movementStrength = 25;
-    let height = movementStrength / window.innerHeight;
-    let width = movementStrength / window.innerWidth;
-    let parallaxElement = this.element.nativeElement
-    // this.element.nativeElement.onmousemove = function(e) {
+    const movementStrength = 25;
+    const height = movementStrength / window.innerHeight;
+    const width = movementStrength / window.innerWidth;
     window.onmousemove = (e) => {
-      let pageX = e.pageX - (window.innerWidth / 2);
-      let pageY = e.pageY - (window.innerHeight / 2);
-      let newvalueX = width * pageX * -1 - 25;
-      let newvalueY = height * pageY * -1 - 50;
-      console.log( newvalueX +"px " + newvalueY + "px")
-      // debugger
-      parallaxElement.style.backgroundPosition = newvalueX +"px " + newvalueY + "px";
+      const pageX = e.pageX - (window.innerWidth / 2);
+      const pageY = e.pageY - (window.innerHeight / 2);
+      const newvalueX = width * pageX * -1 - 25;
+      const newvalueY = height * pageY * -1 - 50;
+      this.element.nativeElement.style.backgroundPosition = newvalueX + 'px ' + newvalueY + 'px';
     };
   }
 }
