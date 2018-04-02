@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
           this.activateLandingPage();
         } else if (event.state.url === '/second') {
           this.activateLandingPage();
-        } else if (event.state.url === '/third') {
+        } else if (event.state.url === '/about') {
           this.activateLandingPage();
         }
 

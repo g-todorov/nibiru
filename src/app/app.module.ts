@@ -12,7 +12,9 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
 import { ItemsService } from './items.service';
 import { SectionComponent } from './section/section.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
-import { MouseParallaxDirective } from './mouse-parallax.directive';
+import { MouseParallaxDirective } from './directives/mouse-parallax.directive';
+import { MainBackgroundComponent } from './components/main-background/main-background.component';
+import { AboutPageComponent } from './about-page/about-page.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { MouseParallaxDirective } from './mouse-parallax.directive';
     SectionComponent,
     MainMenuComponent,
     Parallax,
-    MouseParallaxDirective
+    MouseParallaxDirective,
+    MainBackgroundComponent,
+    AboutPageComponent
   ],
   imports: [
     BrowserModule,

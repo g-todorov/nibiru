@@ -15,9 +15,9 @@ import { topBorderState } from '../animations/main-menu/top-border.state';
   ]
 })
 export class MainMenuComponent implements OnInit {
-  @Input() mainMenuState:string;
-  @Input() topBorderState:string;
-  @Input() bottomBorderState:string;
+  @Input() mainMenuState: string;
+  @Input() topBorderState: string;
+  @Input() bottomBorderState: string;
 
   constructor() { }
 
