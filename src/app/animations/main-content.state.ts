@@ -6,7 +6,7 @@ export const mainContentState =
   trigger('mainContentState', [
     state('visible', style ({
       height: 'auto',
-      bottom: '25px',
+      bottom: variables.footerHeight,
       top: variables.menuHeight
     })),
     transition ('invisible <=> visible', animate('300ms ease-in')),

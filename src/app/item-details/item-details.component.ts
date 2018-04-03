@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router} from '@angular/router';
 import { Location } from '@angular/common';
 
-import { ItemsService } from '../items.service';
+import { ItemsService } from '../services/items.service';
 
 @Component({
   selector: 'app-item-details',
@@ -25,7 +25,7 @@ export class ItemDetailsComponent implements OnInit {
   }
 
   goBack() {
-    // Eventually will have to keep scroll postion of the previous page
+    // TODO Eventually will have to keep scroll postion of the previous page
     this.router.navigate(['/' + this.currentSection]);
   }
 

@@ -5,8 +5,6 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
 import { SectionComponent } from './section/section.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 
-import { ItemsService } from './items.service';
-
 const appRoutes: Routes = [
   { path: 'about', component: AboutPageComponent, data: { state: 'about' }},
   { path: ':section', component: SectionComponent, data: { state: 'section' }},

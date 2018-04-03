@@ -9,12 +9,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
 
-import { ItemsService } from './items.service';
+import { ItemsService } from './services/items.service';
 import { SectionComponent } from './section/section.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { MouseParallaxDirective } from './directives/mouse-parallax.directive';
 import { MainBackgroundComponent } from './components/main-background/main-background.component';
 import { AboutPageComponent } from './about-page/about-page.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { AboutPageComponent } from './about-page/about-page.component';
     Parallax,
     MouseParallaxDirective,
     MainBackgroundComponent,
-    AboutPageComponent
+    AboutPageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

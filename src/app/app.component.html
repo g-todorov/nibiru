@@ -13,16 +13,7 @@
         <router-outlet #o="outlet"></router-outlet>
       </div>
     </div>
-    <div [@footerState]='footerState' class="footer-wrapper">
-      <span class="copyryghts">
-        Copyrights © {{ currentYear }}
-      </span>
-      <span class="social-links">
-        <fa name="facebook"></fa>
-        <fa name="behance"></fa>
-        <fa name="pinterest"></fa>
-      </span>
-    </div>
+    <app-footer [footerState]='footerState'></app-footer>
   </div>
 </div>
 

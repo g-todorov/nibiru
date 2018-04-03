@@ -2,15 +2,16 @@
 @import 'variables'
 
 .item-details-wrapper
-  background $black-almost
+  // background $black-almost
   color $white-smoke
   height 100%
   justify-content center
-  left 0
-  padding $space-large
-  position fixed
-  top 0
+  // left 0
+  padding $space
+  // position fixed
+  // top 0
   width 100%
+  color: $black-almost
 
 .item-details
   align-content center
@@ -57,8 +58,8 @@
 
   .close-button
     position absolute
-    width 20px
-    height: 20px
+    width 30px
+    height: 30px
     right 0
     top 0
     cursor: pointer
@@ -68,7 +69,7 @@
       position absolute
       width 100%
       height: 1px
-      background: white
+      background: $black-almost
       transform: translateY(10px) rotate(45deg)
       transition all .3s
 
@@ -81,60 +82,13 @@
       position absolute
       width 100%
       height: 1px
-      background: white
+      background: $black-almost
       transform: translateY(10px) rotate(-45deg)
       transition all .3s
 
     &:hover:after
       transform: translateY(10px) rotate(45deg)
       transition all .3s
-
-  .previous-button-wrapper
-    height 20px
-    left 10px
-    position absolute
-    width 50px
-
-    &:hover
-      .previous-button
-        &:after
-          transform: rotate(-45deg)
-          transition all .3s
-
-        &:before
-          transform-origin: 0 100%
-          transform: rotate(45deg)
-          transition all .3s
-
-    &:active
-      transform translateX(-5px)
-      transition all .3s
-
-  .previous-button
-    background $white-smoke
-    height 3px
-    position absolute
-    top calc(50% - 3px)
-    transition all .3s
-    width 50px
-
-    &:after
-      background $white-smoke
-      content ''
-      height 3px
-      position absolute
-      transform-origin 0 0
-      transition all .3s
-      width 20px
-
-    &:before
-      background $white-smoke
-      content ''
-      height 3px
-      position absolute
-      transform-origin 0 0
-      transition all .3s
-      width 20px
 
   .next-button-wrapper
     align-items center
@@ -153,7 +107,7 @@
     &:after
       content ''
       height 1px
-      background white
+      background $black-almost
       width 100%
       position: absolute
       left 0
@@ -162,16 +116,83 @@
       transform translateX(-100%)
       transition all .3s
 
-    // &:after:active
-    //   transform translateX(-5%)
-    //   transition all .3s
+    &:hover:after
+      transform translateX(0)
+      transition all .3s
+
+  .prev-button-wrapper
+    align-items center
+    cursor pointer
+    display flex
+    height 20px
+    justify-content center
+    position absolute
+    left 10px
+    width 50px
+    overflow hidden
+
+    .prev-button
+      user-select none
+
+    &:after
+      content ''
+      height 1px
+      background $black-almost
+      width 100%
+      position: absolute
+      left 0
+      width: 100%
+      top calc(50% + 1px)
+      transform translateX(100%)
+      transition all .3s
 
     &:hover:after
       transform translateX(0)
       transition all .3s
 
-  // .next-button
-  //   background $white-smoke
-  //   height 3px
-  //   right 0
+  // .previous-button-wrapper-backup
+  //   height 20px
+  //   left 10px
+  //   position absolute
+  //   width 50px
 
+  //   &:hover
+  //     .previous-button
+  //       &:after
+  //         transform: rotate(-45deg)
+  //         transition all .3s
+
+  //       &:before
+  //         transform-origin: 0 100%
+  //         transform: rotate(45deg)
+  //         transition all .3s
+
+  //   &:active
+  //     transform translateX(-5px)
+  //     transition all .3s
+
+  //   .previous-button
+  //     background $white-smoke
+  //     height 3px
+  //     position absolute
+  //     top calc(50% - 3px)
+  //     transition all .3s
+  //     width 50px
+
+  //     &:after
+  //       background $white-smoke
+  //       content ''
+  //       height 3px
+  //       position absolute
+  //       transform-origin 0 0
+  //       transition all .3s
+  //       width 20px
+
+  //     &:before
+  //       background $white-smoke
+  //       content ''
+  //       height 3px
+  //       position absolute
+  //       transform-origin 0 0
+  //       transition all .3s
+  //       width 20px

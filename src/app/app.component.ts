@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, RoutesRecognized } from '@angular/router';
 
 import { mainMenuState } from './animations/main-menu/main-menu.state';
-import { footerState } from './animations/footer.state';
+// import { footerState } from './animations/footer.state';
 import { mainContentState } from './animations/main-content.state';
 import { bottomBorderState } from './animations/main-menu/bottom-border.state';
 import { topBorderState } from './animations/main-menu/top-border.state';
@@ -14,7 +14,7 @@ import { routerTransition } from './animations/router-transition.state';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.styl'],
   animations: [
-    footerState,
+    // footerState,
     mainContentState,
     routerTransition
   ]

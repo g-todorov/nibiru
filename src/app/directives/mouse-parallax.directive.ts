@@ -18,9 +18,13 @@ export class MouseParallaxDirective implements AfterViewInit, OnDestroy  {
     window.onmousemove = (e) => {
       const pageX = e.pageX - (window.innerWidth / 2);
       const pageY = e.pageY - (window.innerHeight / 2);
-      const newvalueX = width * pageX * -1 - 25;
-      const newvalueY = height * pageY * -1 - 50;
-      this.element.nativeElement.style.backgroundPosition = newvalueX + 'px ' + newvalueY + 'px';
+      const newvalueX = width * pageX;
+      const newvalueY = height * pageY;
+      // const newvalueX = width * pageX * -1 - 25;
+      // const newvalueY = height * pageY * -1 - 50;
+      // this.element.nativeElement.style.backgroundPosition = newvalueX + 'px ' + newvalueY + 'px';
+      this.element.nativeElement.style.left = newvalueX + 'px';
+      this.element.nativeElement.style.top = newvalueY + 'px';
     };
   }
 
