@@ -14,6 +14,6 @@ export const secondMenuItemState =
       border: '1px solid black',
       padding: '10px'
     })),
-    transition ('void <=> *', animate('300ms ease-in')),
-    transition ('unselected <=> selected', animate('300ms ease-in')),
+    transition ('void <=> *', animate('3000ms ease-in')),
+    transition ('unselected <=> selected', animate('3000ms ease-in')),
   ]);

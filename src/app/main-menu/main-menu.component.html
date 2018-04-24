@@ -1,51 +1,47 @@
 <div class="menu-wrapper" [ngClass]="mainMenuState" [@mainMenuState]="mainMenuState">
   <div [@topBorderState]='topBorderState' class="menu-top-border">
   </div>
-    <div>
-      <div
-        class="menu-item one link"
-        routerLink="/first"
-        routerLinkActive="selected">
-        <div class="menu-item-content">
-          <div class="icon-wrapper">
-            <fa name="bed"></fa>
-          </div>
-          <div class="menu-item-text">
-            furniture
-          </div>
+  <div class="menu-items-wrapper">
+    <div
+      class="menu-item one link"
+      routerLink="/first"
+      routerLinkActive="selected">
+      <div class="menu-item-content">
+        <div class="icon-wrapper">
+          <fa name="bed"></fa>
+        </div>
+        <div class="menu-item-text">
+          furniture
         </div>
       </div>
     </div>
-    <div>
-      <div
-        class="menu-item two link"
-        routerLink="/second"
-        routerLinkActive="selected">
-        <div class="menu-item-content">
-          <div class="icon-wrapper">
-            <fa name="diamond"></fa>
-          </div>
-          <div class="menu-item-text">
-            jewellery
-          </div>
+    <div
+      class="menu-item two link"
+      routerLink="/second"
+      routerLinkActive="selected">
+      <div class="menu-item-content">
+        <div class="icon-wrapper">
+          <fa name="diamond"></fa>
+        </div>
+        <div class="menu-item-text">
+          jewellery
         </div>
       </div>
     </div>
-    <div>
-      <div
-        class="menu-item three link"
-        routerLink="/about"
-        routerLinkActive="selected">
-        <div class="menu-item-content">
-          <div class="icon-wrapper">
-            <fa name="address-card-o"></fa>
-          </div>
-          <div class="menu-item-text">
-            about us
-          </div>
+    <div
+      class="menu-item three link"
+      routerLink="/about"
+      routerLinkActive="selected">
+      <div class="menu-item-content">
+        <div class="icon-wrapper">
+          <fa name="address-card-o"></fa>
+        </div>
+        <div class="menu-item-text">
+          about us
         </div>
       </div>
     </div>
+  </div>
   <div [@bottomBorderState]='bottomBorderState' class="menu-bottom-border">
   </div>
 </div>

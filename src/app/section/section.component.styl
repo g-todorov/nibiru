@@ -1,21 +1,20 @@
 @import 'variables'
 
 .items-section
-  bottom: 0;
-  left: 0;
+  bottom 0
+  left 0
   overflow-y scroll
   position absolute
-  right: -17px
-  top: 0;
+  right -17px
+  top 0
 
 .content-inner-wrapper
-  // width $content-inner-width
   display flex
   flex-wrap wrap
-  justify-content: center
-  margin: 0 auto
+  justify-content center
+  margin 0 auto
   max-width 50%
-  width: 50%
+  width 50%
 
   .item-wrapper
     flex 1 1 50%
@@ -32,7 +31,7 @@
       .item-link
         &:hover:after
           opacity 0
-          transition all .3s
+          transition all 3s
 
         &:after
           background $white-smoke
@@ -43,12 +42,10 @@
           position absolute
           right 0
           top 0
-          transition all .3s
+          transition all 3s
 
     img
-      opacity: 0.9
-      // max-height 100%
-      // max-width 100%
+      opacity .9
 
     img:after
       content ''

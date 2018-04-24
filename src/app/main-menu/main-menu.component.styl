@@ -6,14 +6,20 @@
   justify-content center
   overflow hidden
   position absolute
-  top calc(50% - 75px)
+  top calc(50% - 100px)
+  bottom  calc(50% + 100px)
   width 100%
+
+  .menu-items-wrapper
+    width 100%
+    justify-content center
+    display flex
 
   &.active
     .menu-item
       height 50px
       border none
-      transition all .3s
+      transition all 3s
 
       .menu-item-text
         position: relative
@@ -26,7 +32,7 @@
           background: black;
           left: 0;
           top calc(50% + 1px)
-          transition all .3s
+          transition all 3s
           transform: translateX(-100%)
 
         &:after
@@ -37,32 +43,31 @@
           background: black;
           right: 0;
           top calc(50% + 1px)
-          transition all .3s
+          transition all 3s
           transform: translateX(100%)
 
         &:hover:before
           transform: translateX(0)
-          transition all .3s
+          transition all 3s
 
         &:hover:after
           transform: translateX(0)
-          transition all .3s
+          transition all 3s
 
       .menu-item-content
         transform: translateY(-150px)
-        transition all ease-in .3s
+        transition all ease-in 3s
 
   .menu-item
     border 1px solid $black-almost
     height 150px
     margin 20px
-    transition all ease-in .3s
+    transition all ease-in 3s
     width 150px
     cursor pointer
     overflow: hidden
 
     .menu-item-content
-      // border 1px solid $black-almost
       height 100%
       width 100%
 
@@ -80,17 +85,15 @@
     &.selected
       width 150px
       height 50px
-      // border 1px solid black
-      // padding 10px
-      transition all .3s
+      transition all 3s
 
       .menu-item-text
         &:before
-          transition all .3s
+          transition all 3s
           transform: translateX(0)
 
         &:after
-          transition all .3s
+          transition all 3s
           transform: translateX(0)
 
   .menu-bottom-border
@@ -100,7 +103,7 @@
     height 1px
     left 0
     position absolute
-    width 50%
+    width 100%
 
   .menu-top-border
     background $black-almost
@@ -109,4 +112,4 @@
     position absolute
     right 0
     top 0
-    width 50%
+    width 100%
