@@ -7,7 +7,8 @@ import { AboutPageComponent } from './about-page/about-page.component';
 
 const appRoutes: Routes = [
   { path: 'about', component: AboutPageComponent, data: { state: 'about' }},
-  { path: ':section', component: SectionComponent, data: { state: 'section' }},
+  { path: 'furniture', component: SectionComponent, data: { state: 'furniture' }},
+  { path: 'jewellery', component: SectionComponent, data: { state: 'jewellery' }},
   { path: ':section/:name', component: ItemDetailsComponent, data: { state: 'details' }},
 ];
 

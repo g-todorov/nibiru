@@ -6,10 +6,17 @@ import { Parallax, ParallaxConfig } from 'ngx-parallax';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+
 import { AppComponent } from './app.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
 
+import { ApiService } from './api-service/api.service';
 import { ItemsService } from './services/items.service';
+import { FurnitureService } from './services/furniture.service';
+import { MessageService } from './api-service/message-service.service';
+import { InMemoryDataService } from './api-service/in-memory-data.service';
 import { SectionComponent } from './section/section.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { MouseParallaxDirective } from './directives/mouse-parallax.directive';
@@ -34,9 +41,21 @@ import { FooterComponent } from './components/footer/footer.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    HttpClientModule,
+    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+    // and returns simulated server responses.
+    // Remove it when a real server is ready to receive requests.
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
-  providers: [ItemsService],
+  providers: [
+    ApiService,
+    ItemsService,
+    FurnitureService,
+    MessageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
