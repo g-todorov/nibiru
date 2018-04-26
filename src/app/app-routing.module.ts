@@ -9,7 +9,7 @@ const appRoutes: Routes = [
   { path: 'about', component: AboutPageComponent, data: { state: 'about' }},
   { path: 'furniture', component: SectionComponent, data: { state: 'furniture' }},
   { path: 'jewellery', component: SectionComponent, data: { state: 'jewellery' }},
-  { path: ':section/:name', component: ItemDetailsComponent, data: { state: 'details' }},
+  { path: ':section/:id', component: ItemDetailsComponent, data: { state: 'details' }},
 ];
 
 @NgModule({

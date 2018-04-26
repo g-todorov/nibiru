@@ -1,5 +1,5 @@
 <div class="item-details-wrapper" (window:keydown)="onKeydown($event)">
-  <div class="item-details">
+  <div class="item-details" *ngIf="item">
     <div class="description content-inner-wrapper">
       <div class="image-wrapper">
         <img [src]="item.path" [alt]="item.name">
@@ -21,11 +21,7 @@
         prev
       </div>
     </div>
-    <!-- <div class="previous-button-wrapper-backup" (click)="goToPreviousItem()">
-      <div class="previous-button" ></div>
-    </div> -->
     <span class="close-button" (click)="goBack()">
-      <!-- <fa name="close" size='2x'></fa> -->
     </span>
   </div>
 </div>

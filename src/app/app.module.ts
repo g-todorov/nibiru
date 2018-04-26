@@ -15,6 +15,7 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
 import { ApiService } from './api-service/api.service';
 import { ItemsService } from './services/items.service';
 import { FurnitureService } from './services/furniture.service';
+import { JewelleryService } from './services/jewellery.service';
 import { MessageService } from './api-service/message-service.service';
 import { InMemoryDataService } from './api-service/in-memory-data.service';
 import { SectionComponent } from './section/section.component';
@@ -54,6 +55,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ApiService,
     ItemsService,
     FurnitureService,
+    JewelleryService,
     MessageService
   ],
   bootstrap: [AppComponent]

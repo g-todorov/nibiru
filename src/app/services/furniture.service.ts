@@ -5,27 +5,30 @@ import { ApiService } from '../api-service/api.service';
 
 @Injectable()
 export class FurnitureService {
-
-  itemsUrl = 'jewelleryItems';
+  itemsUrl = 'furnitureItems';
 
   private sourceFurnitureItems = new BehaviorSubject(null);
-  shoppingItems = this.sourceFurnitureItems.asObservable();
+  furnitureItems = this.sourceFurnitureItems.asObservable();
 
-  // private sourceShoppingItem = new BehaviorSubject(null);
-  // shoppingItem = this.sourceShoppingItem.asObservable();
+  private sourceFurnitureItem = new BehaviorSubject(null);
+  furnitureItem = this.sourceFurnitureItem.asObservable();
 
   constructor(private apiService: ApiService) { }
 
   requestFurnitureItems() {
-    this.apiService.httpGetRequest(this.itemsUrl).subscribe(shoppingItems => {
-      this.sourceFurnitureItems.next(shoppingItems);
+    this.apiService.httpGetRequest(this.itemsUrl).subscribe(furnitureItems => {
+      this.sourceFurnitureItems.next(furnitureItems);
     });
   }
 
-  // requestShoppingItem(id) {
-  //   this.apiService.httpGetRequest(`${this.itemsUrl}/${id}`).subscribe(shoppingItem => {
-  //     this.sourceShoppingItem.next(shoppingItem);
-  //   });
-  // }
+  requestFurnitureItem(id) {
+    this.apiService.httpGetRequest(`${this.itemsUrl}/${id}`).subscribe(furnitureItem => {
+      this.sourceFurnitureItem.next(furnitureItem);
+    });
+  }
+
+  requestNextFurnitureItem(currentId) {
+    debugger
+  }
 
 }
