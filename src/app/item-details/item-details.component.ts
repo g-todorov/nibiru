@@ -14,7 +14,7 @@ import { ItemsService } from '../services/items.service';
   styleUrls: ['./item-details.component.styl'],
 })
 export class ItemDetailsComponent implements OnInit {
-  item: {};
+  item: any;
   currentSection: string;
   nextItem: any;
   prevItem: any;
@@ -32,11 +32,17 @@ export class ItemDetailsComponent implements OnInit {
   ngOnInit() {
     const routerSubscription = this.route.params.subscribe(params => {
       this.currentSection = params.section;
-      // this.item = this.itemsService.getItem(params.name);
-      this.getItem(params.section, params.id);
+
+      if (!this.item) {
+        this.getItem(params.section, params.id);
+      }
     });
 
     this.furnitureServiceSubscription = this.furnitureService.furnitureItem.subscribe(furnitureItem => {
+      if (this.item && furnitureItem && furnitureItem.id !== this.item.id) {
+        this.router.navigate(['/' + this.currentSection + '/' + furnitureItem.id]);
+      }
+
       this.item = furnitureItem;
     });
 
@@ -62,24 +68,21 @@ export class ItemDetailsComponent implements OnInit {
     this.router.navigate(['/' + this.currentSection]);
   }
 
-  goToNextItem() {
-    this.furnitureService.requestNextFurnitureItem('test');
-    // this.nextItem = this.itemsService.getNextItem(this.currentSection, this.item);
-    // this.router.navigate(['/' + this.currentSection + '/' + this.nextItem.name]);
+  goToNextItem(id) {
+    this.furnitureService.requestNearbyFurnitureItem('next', id);
   }
 
-  goToPreviousItem() {
-    this.prevItem = this.itemsService.getPrevItem(this.currentSection, this.item);
-    this.router.navigate(['/' + this.currentSection + '/' + this.prevItem.name]);
+  goToPreviousItem(id) {
+    this.furnitureService.requestNearbyFurnitureItem('prev', id);
   }
 
-  onKeydown(event) {
-    // MOVE THIS INTO DIRECTIVE
-    if (event.key === 'ArrowRight') {
-      this.goToNextItem();
-    } else if (event.key === 'ArrowLeft') {
-      this.goToPreviousItem();
-    }
-  }
+  // onKeydown(event) {
+  //   // MOVE THIS INTO DIRECTIVE
+  //   if (event.key === 'ArrowRight') {
+  //     this.goToNextItem();
+  //   } else if (event.key === 'ArrowLeft') {
+  //     this.goToPreviousItem();
+  //   }
+  // }
 
 }
